@@ -3,3 +3,16 @@
     background-color: var(--primary-color);
     box-sizing: border-box;
 }
+
+.hero .hero-left-part {}
+.hero-left-part .hero-title {}
+.hero-left-part .hero-text {}
+.hero-btn-group {}
+.hero-btn-group .hero-get-started-btn {}
+.hero-btn-group .hero-get-started-btn a {}
+.hero-btn-group .hero-watch-vid-btn {}
+.hero-btn-group .hero-watch-vid-btn svg {}
+.hero-btn-group .hero-watch-vid-btn a {}
+
+.hero .hero-right-part {}
+.hero-right-part img {}
