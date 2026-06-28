@@ -8,6 +8,7 @@
 } 
 .portfolio .portfolio-title h2 {
     color: var(--primary-color);
+    font-family: 'Jost', sans-serif;
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 16px;
@@ -51,12 +52,12 @@
 .portfolio .portfolio-filters label {
     display: inline-block;
     padding: 8px 20px 10px 20px;
-    margin: 0 4px 8px;
+    margin: 30px 1px 3px;
     border-radius: 50px;
     cursor: pointer;
     color: var(--text-body);
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1;
     transition: all 0.3s ease-in-out;
 }
@@ -86,21 +87,111 @@
 
 
 /* ex: all이 input되면 포토폴리오 컨텐츠에 있는 그리드중 all그리드가 뜨게하기위한 틀 */
-.portfolio #portfolio-all:checked ~ .portfolio-content .all-grid {}
-.portfolio #portfolio-app:checked ~ .portfolio-content .app-grid {}
-.portfolio #portfolio-card:checked ~ .portfolio-content .card-grid {}
-.portfolio #portfolio-web:checked ~ .portfolio-content .web-grid {}
+.portfolio #portfolio-all:checked ~ .portfolio-content .all-grid,
+.portfolio #portfolio-app:checked ~ .portfolio-content .app-grid,
+.portfolio #portfolio-card:checked ~ .portfolio-content .card-grid,
+.portfolio #portfolio-web:checked ~ .portfolio-content .web-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+    animation: portfolioShow 0.45s ease;
+}
+
+/* 추가: 기본적으로 모든 grid 숨김 */
+.portfolio .portfolio-content .portfolio-grid {
+    display: none;
+}
+
+/* 추가: All 화면 원본 느낌 배치 */
+.portfolio .portfolio-content .all-grid .portfolio-item:nth-child(1) {
+    grid-row: span 2;
+}
+
+.portfolio .portfolio-content .all-grid .portfolio-item:nth-child(5) {
+    grid-row: span 2;
+}
+
+.portfolio .portfolio-content .all-grid .portfolio-item:nth-child(6) {
+    grid-row: span 2;
+}
+
+/* 추가: 이미지 영역 */
+.portfolio .portfolio-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio .portfolio-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: 0.4s;
+}
 
 
-.portfolio .portfolio-item {}
-.portfolio .portfolio-item img {}
+
+
+/* 추가: App/Card/Web은 3장씩 가로 배치 */
+.portfolio #portfolio-app:checked ~ .portfolio-content .app-grid,
+.portfolio #portfolio-card:checked ~ .portfolio-content .card-grid,
+.portfolio #portfolio-web:checked ~ .portfolio-content .web-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* 추가: 원본 Arsha처럼 밑에서 올라오는 info 박스 */
+.portfolio .portfolio-item .portfolio-info {
+    opacity: 0;
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: -100%;
+    z-index: 3;
+    padding: 15px;
+    background: rgba(255,255,255,0.80); 
+    transition: all ease-in-out 0.5s;
+}
+
+.portfolio .portfolio-item {  position: relative; overflow: hidden;}
+.portfolio .portfolio-item img {
+    width: 100%;
+    display: block;
+}
 .portfolio .portfolio-item .portfolio-info {}
-.portfolio .portfolio-item .portfolio-info h3 {}
-.portfolio .portfolio-item .portfolio-info p {}
-.portfolio .portfolio-item:hover .portfolio-info {}
+.portfolio .portfolio-item .portfolio-info h3 {
+    margin: 0 0 5px;
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: 600;
+}
+.portfolio .portfolio-item .portfolio-info p {
+    margin: 0;
+    color: var(--text-body);
+    font-size: 14px;
+}
+.portfolio .portfolio-item:hover .portfolio-info {
+    opacity: 1;
+    bottom: 0;
+}
 
 
-/* 후에 여기다 애니메이션, 반응형 넣을예정! */
+
+
+/* 추가: grid 전환 애니메이션 */
+@keyframes portfolioShow {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 
 
 
