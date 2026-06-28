@@ -31,9 +31,19 @@ body {
 /* 컨테이너 설정 */
 .container {
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
 }
 
 /* 모든 섹션의 공통 상하 여백 */
