@@ -37,6 +37,17 @@ header .demo-bar {
 }
 
 .media-button .media-btn svg {
+    fill: var(--text-muted);
+    width: 20px;
+    height: 20px;
+    transition: all 0.25s ease;
+}
+
+.media-button .media-btn svg:hover {
+    fill: var(--bg-white);
+}
+
+.media-button .media-btn.monitor-btn svg {
     fill: var(--bg-white);
     width: 20px;
     height: 20px;
@@ -46,6 +57,10 @@ header .demo-bar {
     display: flex;
     flex-direction: row;
     gap: 20px;
+}
+
+.middle-header-element a {
+    transition: all 0.25s ease;
 }
 
 .middle-header-element a:nth-child(1) {
@@ -61,6 +76,10 @@ header .demo-bar {
 .middle-header-element a:nth-child(3) {
     color: var(--text-muted);
     font-weight: bold;
+}
+
+.middle-header-element a:hover {
+    color: var(--bg-white);
 }
 
 .right-header-element {
@@ -82,16 +101,34 @@ header .demo-bar {
     gap: 7px;
 }
 
+
+
 .right-header-element .right-header-btn svg {
     fill: var(--bg-white);
     width: 20px;
     height: 20px;
 }
 
-.right-header-element .right-header-btn.download-btn  {
-    background-color: var(--accent-color);
+.right-header-element .right-header-btn.demo-hide-btn svg {
+    fill: var(--text-muted);
+
+    transition: all 0.25s ease;
+}
+
+.right-header-element .right-header-btn.demo-hide-btn svg:hover {
+    fill: var(--bg-white);
+}
+
+.right-header-element .right-header-btn.download-btn {
+    background-color: var(--accent-hover);
     height: 100%;
     padding: 0 15px;
+
+    transition: all 0.3s ease;
+}
+
+.right-header-element .right-header-btn.download-btn:hover {
+    background-color: var(--accent-color);
 }
 
 .right-header-element .right-header-btn span {
@@ -113,7 +150,7 @@ header .transparent-header {
 }
 
 .transparent-header #header-arsha a {
-    font-size: 30px;        /* 원하는 크기로 수치 조절 (예: 2rem 또는 32px) */
+    font-size: 30px;
     font-weight: 500; 
     color: var(--bg-white);
     padding: 0 45px;
@@ -137,6 +174,11 @@ header .transparent-header {
 
 .header-menu-group .nav-menu a {
     color: var(--bg-white);
+    transition: all 0.3s ease;
+}
+
+.header-menu-group .nav-menu a:hover {
+    color: var(--accent-hover);
 }
 
 .header-menu-group .get-started-btn {
@@ -144,4 +186,10 @@ header .transparent-header {
     padding: 10px 20px;
     border-radius: 20px;
     background-color: var(--accent-color);
+
+    transition: all 0.3s ease;
+}
+
+.header-menu-group .get-started-btn:hover {
+    background-color: var(--accent-hover);
 }
