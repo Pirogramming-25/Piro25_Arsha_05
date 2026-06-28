@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Jost:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"); /* 제목용 폰트 (by. 다희님) */
+
 :root {
     /* Main Theme Colors */
     --primary-color: #37517e;       /* 아르샤 메인 네이비 (헤더 글자, 타이틀 등) */
@@ -11,9 +13,13 @@
     
     /* Background Colors */
     --bg-white: #ffffff;            /* 기본 하얀색 배경 */
-    --bg-light: #f3f5fa;            /* 연한 회색 배경 */
+    --bg-light: #f5f6f8;            /* 연한 회색 배경 */
 
     /* 참고 - 색상 적용 방법: var(--primary-color) */
+
+    /* Fonts */
+    --title-font: 'Jost', sans-serif;
+    --nav-font: "Poppins", sans-serif;
 }
 
 /* 전체 화면 기본 설정 및 색상 고정 */
@@ -26,9 +32,19 @@ body {
 /* 컨테이너 설정 */
 .container {
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
 }
 
 /* 모든 섹션의 공통 상하 여백 */
