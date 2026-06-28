@@ -18,7 +18,8 @@
     /* 참고 - 색상 적용 방법: var(--primary-color) */
 
     /* Fonts */
-    --title-font: 'Poppins', sans-serif;
+    --title-font: 'Jost', sans-serif;
+    --nav-font: "Poppins", sans-serif;
 }
 
 /* 전체 화면 기본 설정 및 색상 고정 */
