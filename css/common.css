@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Jost:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"); /* 제목용 폰트 (by. 다희님) */
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"); /* 제목용 폰트 (by. 다희님) */
 
 :root {
     /* Main Theme Colors */
@@ -13,7 +13,7 @@
     
     /* Background Colors */
     --bg-white: #ffffff;            /* 기본 하얀색 배경 */
-    --bg-light: #f3f5fa;            /* 연한 회색 배경 */
+    --bg-light: #f5f6f8;            /* 연한 회색 배경 */
 
     /* 참고 - 색상 적용 방법: var(--primary-color) */
 
