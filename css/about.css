@@ -1,24 +1,138 @@
-.about {}
-.about .about-title {}
-.about .about-title h1 {}
-.about .about-title .about-title-divider {}
+.about {
+    background-color: var(--bg-white);
+    box-sizing: border-box;
 
-.about-text-left {}
-.about-text-left p {}
-.about-text-left .about-text-check {}
-.about-text-check .text-check {}
-.about-text-check .text-check.first-text {}
-.about-text-check .text-check.first-text svg {}
-.about-text-check .text-check.first-text p {}
-.about-text-check .text-check.second-text {}
-.about-text-check .text-check.second-text svg {}
-.about-text-check .text-check.second-text p {}
-.about-text-check .text-check.third-text {}
-.about-text-check .text-check.third-text svg {}
-.about-text-check .text-check.third-text p {}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-.about-text-right {}
-.about-text-right p {}
-.about-text-right .about-read-more-btn {}
-.about-read-more-btn p {}
-.about-read-more-btn svg {}
+.about .about-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about .about-title h2 {
+    font-family: var(--title-font);
+    font-size :32px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 28px;
+    padding-bottom: 3px;
+
+    position: relative;
+}
+
+.about .about-title h2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 160px;
+    height: 1px;
+    background-color: #ddd;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about .about-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #47b2e4;
+    bottom: -21px; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about-text-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+    padding: 0 50px;
+}
+
+.about-text-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.about-text-left p {
+    font-family: var(--title-font);
+}
+
+.about-text-left .about-text-check {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin: 0 2px;
+}
+
+.about-text-check .text-check {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.about-text-check .text-check svg {
+    fill: var(--accent-color);
+    width: 1.15rem;
+    height: 1.15rem;
+}
+
+.about-text-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.about-text-right p {
+    font-family: var(--title-font);
+}
+
+.about-text-right .about-read-more-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 12px 26px;
+    border: 2px solid var(--accent-color);
+    border-radius: 4px;
+    transition: all 0.5s ease;
+}
+
+.about-text-right .about-read-more-btn:hover {
+    background-color: var(--accent-color);
+}
+
+.about-read-more-btn p {
+    font-family: var(--title-font);
+    font-size: 16px;
+    color: var(--accent-hover);
+}
+
+.about-read-more-btn:hover p {
+    color: var(--bg-white); 
+}
+
+.about-read-more-btn svg {
+    size: 16px;
+    fill: var(--accent-hover);
+}
+
+.about-read-more-btn:hover svg {
+    fill: var(--bg-white);
+    transform: translateX(4px);
+}
