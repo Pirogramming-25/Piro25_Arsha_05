@@ -1,0 +1,27 @@
+header {}
+header .demo-bar {}
+
+.left-header-element img {}
+.left-header-element .media-button {}
+.media-button .media {}
+.media-button .media .monitor-btn {}
+.media-button .media .tablet-btn {}
+.media-button .media .mobile-btn {}
+
+.middle-header-element {}
+
+.right-header-element {}
+.right-header-element .demo-hide-btn {}
+.right-header-element .demo-hide-btn img {}
+.right-header-element .download-btn {}
+.right-header-element .download-btn img {}
+.right-header-element .download-btn span {}
+
+header .transparent-header {}
+.header-arsha {}
+
+.header-menu-group {}
+.header-menu-group .nav-menu {}
+.header-menu-group .nav-menu a {}
+.header-menu-group .get-started {}
+.header-menu-group .get-started-btn {}
