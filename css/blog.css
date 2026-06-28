@@ -1,13 +1,19 @@
 /* ===== Recent Blog Posts ===== */
 .blog {
     background: var(--bg-light);
+    padding: 60px 0;
 }
 
 .blog .container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 12px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     column-gap: 24px;
+    box-sizing: border-box;
 }
 
 /* ===== Blog Header ===== */
@@ -68,8 +74,10 @@
 
 /* ===== Blog Card Layout ===== */
 .blog-post {
-    width: calc((100% - 48px) / 3);
-    margin-top: 60px;
+    flex: 0 0 calc((100% - 48px) / 3);
+    max-width: calc((100% - 48px) / 3);
+    margin-top: 48px;
+    box-sizing: border-box;
 }
 
 .blog-post-card {
@@ -121,7 +129,7 @@
 /* ===== Card Content ===== */
 .blog-post-title {
     margin: 0;
-    padding: 26px 32px 14px;
+    padding: 30px 30px 15px;
     color: var(--text-title);
     font-family: var(--title-font);
     font-size: 20px;
@@ -139,7 +147,7 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 0 32px 22px;
+    padding: 0 30px 30px;
     color: var(--text-muted);
     font-family: var(--body-font);
     font-size: 15px;
@@ -170,7 +178,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    margin: 0 32px;
+    margin: 0 30px;
     padding: 20px 0 26px;
     border-top: 1px solid #eeeeee;
     color: #777777;
@@ -180,6 +188,7 @@
     line-height: 24px;
     transition: color 0.3s;
 }
+
 .read-more span,
 .readmore-arrow {
     color: inherit;
@@ -191,17 +200,15 @@
     line-height: 1;
 }
 
-.blog-post-card:hover .read-more{
-    color: var(--accent-color);
-}
-.read-more {
+.blog-post-card:hover .read-more {
     color: var(--accent-color);
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 1199px) {
     .blog-post {
-        width: calc((100% - 24px) / 2);
+        flex: 0 0 calc((100% - 24px) / 2);
+        max-width: calc((100% - 24px) / 2);
     }
 }
 
@@ -212,7 +219,8 @@
     }
 
     .blog-post {
-        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
         margin-top: 40px;
     }
 
