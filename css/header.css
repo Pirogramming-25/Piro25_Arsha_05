@@ -1,7 +1,11 @@
 header {
     display: flex;
     flex-direction: column;
+    position: sticky;
+    top: 0; 
+    z-index: 999;
 }
+
 header .demo-bar {
     height: 2rem;
     background: #22488a;
@@ -10,7 +14,7 @@ header .demo-bar {
     justify-content: space-between;
     align-items: center;
 
-    padding: 0 20px;
+    padding: 0 0 0 20px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -31,22 +35,18 @@ header .demo-bar {
     flex-direction: row;
     gap: 8px;
 }
+
 .media-button .media-btn svg {
     fill: var(--bg-white);
     width: 20px;
     height: 20px;
 }
-.media-button .media-btn .monitor-btn {}
-.media-button .media-btn .tablet-btn {}
-.media-button .media-btn .mobile-btn {}
 
 .middle-header-element {
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
-
-
 
 .middle-header-element a:nth-child(1) {
     color: var(--text-muted);
@@ -91,17 +91,57 @@ header .demo-bar {
 .right-header-element .right-header-btn.download-btn  {
     background-color: var(--accent-color);
     height: 100%;
+    padding: 0 15px;
 }
 
 .right-header-element .right-header-btn span {
     color: var(--bg-white);
 }
 
-header .transparent-header {}
-.header-arsha {}
+header .transparent-header {
+    height: 5rem;
+    background-color: color-mix(in srgb, var(--primary-color) 90%, transparent);
 
-.header-menu-group {}
-.header-menu-group .nav-menu {}
-.header-menu-group .nav-menu a {}
-.header-menu-group .get-started {}
-.header-menu-group .get-started-btn {}
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.transparent-header #header-arsha a {
+    font-size: 30px;        /* 원하는 크기로 수치 조절 (예: 2rem 또는 32px) */
+    font-weight: 500; 
+    color: var(--bg-white);
+    padding: 0 45px;
+}
+
+.header-menu-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 45px;
+    padding: 0 60px;
+}
+
+.header-menu-group .nav-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.header-menu-group .nav-menu a {
+    color: var(--bg-white);
+}
+
+.header-menu-group .get-started-btn {
+    color: var(--bg-white);
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: var(--accent-color);
+}
