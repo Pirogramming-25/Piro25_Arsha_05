@@ -1,0 +1,42 @@
+:root {
+    /* Main Theme Colors */
+    --primary-color: #37517e;       /* 아르샤 메인 네이비 (헤더 글자, 타이틀 등) */
+    --accent-color: #47b2e4;        /* 포인트 하늘색 (버튼, 하이라이트 언더바 등) */
+    --accent-hover: #209dd8;        /* 버튼 호버 시 약간 진해지는 하늘색 */
+    
+    /* Text Colors */
+    --text-title: #37517e;          /* 주요 대제목 색상 */
+    --text-body: #444444;           /* 일반 본문/설명 글자 색상 */
+    --text-muted: #aaaaaa;          /* 아주 연한 회색 (아이콘이나 덜 중요한 캡션) */
+    
+    /* Background Colors */
+    --bg-white: #ffffff;            /* 기본 하얀색 배경 */
+    --bg-light: #f3f5fa;            /* 연한 회색 배경 */
+
+    /* 참고 - 색상 적용 방법: var(--primary-color) */
+}
+
+/* 전체 화면 기본 설정 및 색상 고정 */
+body {
+    color: var(--text-body);
+    background-color: var(--bg-white);
+    overflow-x: hidden; /* 가로 스크롤 방지 */
+}
+
+/* 컨테이너 설정 */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 모든 섹션의 공통 상하 여백 */
+section {
+    padding: 60px 0;
+}
+
+/* 배경색이 엇갈리는 섹션용 클래스 (연한 회색 배경 색션에 적용) */
+.section-bg {
+    background-color: var(--bg-light);
+}
