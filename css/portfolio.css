@@ -1,48 +1,54 @@
-/*--------------------------------------------------------------
-# Portfolio Section
---------------------------------------------------------------*/
-
-    .portfolio {
+.portfolio {
     background-color: var(--background-color);
     padding: 60px 0;
-    }
-
-    .portfolio .portfolio-title {
+} 
+.portfolio .portfolio-title {
     text-align: center;
     margin-bottom: 30px;
-    }
-
-    .portfolio .portfolio-title h2 {
+} 
+.portfolio .portfolio-title h2 {
     color: var(--primary-color);
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 16px;
-    }
-
-    .portfolio .portfolio-title p {
+} 
+.portfolio .portfolio-title p {
     color: var(--text-body);
     margin: 0;
-    }
+} 
 
-    .portfolio input {
-    display: none;
-    }
+.portfolio .portfolio-title .title-divider {
+    width: 160px;
+    height: 1px;
+    background-color: #d6d6d6;
+    margin: 20px auto;
+    position: relative;
+}
 
-    .portfolio input[type="radio"] {
-    display: none;
-    }
+.portfolio .portfolio-title .title-divider::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
 
-    #portfolio-all {}
-    #portfolio-app {}
-    #portfolio-card {}
-    #portfolio-web {}
+.portfolio input {display: none;} 
+.portfolio input[type="radio"] {display: none;} 
 
-    .portfolio .portfolio-filters {
+#portfolio-all {}
+#portfolio-app {}
+#portfolio-card {}
+#portfolio-web {}
+
+.portfolio .portfolio-filters {
     text-align: center;
     margin-bottom: 30px;
-    }
-
-    .portfolio .portfolio-filters label {
+}
+.portfolio .portfolio-filters label {
     display: inline-block;
     padding: 8px 20px 10px 20px;
     margin: 0 4px 8px;
@@ -53,159 +59,48 @@
     font-weight: 500;
     line-height: 1;
     transition: all 0.3s ease-in-out;
-    }
+}
+.portfolio .portfolio-filters label[for = "portfolio-all"] {}
+.portfolio .portfolio-filters label[for = "portfolio-app"] {}
+.portfolio .portfolio-filters label[for = "portfolio-card"] {}
+.portfolio .portfolio-filters label[for = "portfolio-web"] {}
+.portfolio .portfolio-filters label:hover {}
 
-    .portfolio .portfolio-filters label[for="portfolio-all"] {}
-    .portfolio .portfolio-filters label[for="portfolio-app"] {}
-    .portfolio .portfolio-filters label[for="portfolio-card"] {}
-    .portfolio .portfolio-filters label[for="portfolio-web"] {}
-
-    .portfolio .portfolio-filters label:hover {
-    color: var(--contrast-color);
+/* all라디오가 input되면 그 input과 연결된 라벨을 꾸미는 코드!(눈에보이는게 라벨, 상태는 라디오) */
+/* hover와 선택됐을경우 모두 같은 기능 */
+.portfolio .portfolio-filters label:hover,
+.portfolio #portfolio-all:checked ~ .portfolio-filters label[for="portfolio-all"],
+.portfolio #portfolio-app:checked ~ .portfolio-filters label[for="portfolio-app"],
+.portfolio #portfolio-card:checked ~ .portfolio-filters label[for="portfolio-card"],
+.portfolio #portfolio-web:checked ~ .portfolio-filters label[for="portfolio-web"] {
+    color: var(--bg-white);
     background-color: var(--accent-color);
-    }
+}
 
-    /* all라디오가 input되면 그 input과 연결된 라벨을 꾸미는 코드!(눈에보이는게 라벨, 상태는 라디오) */
-    /* hover와 선택됐을경우 모두 같은 기능 */
-    .portfolio .portfolio-filters label:hover,
-    .portfolio #portfolio-all:checked ~ .portfolio-filters label[for="portfolio-all"],
-    .portfolio #portfolio-app:checked ~ .portfolio-filters label[for="portfolio-app"],
-    .portfolio #portfolio-card:checked ~ .portfolio-filters label[for="portfolio-card"],
-    .portfolio #portfolio-web:checked ~ .portfolio-filters label[for="portfolio-web"] {
-    color: var(--contrast-color);
-    background-color: var(--accent-color);
-    }
+.portfolio .portfolio-content {}
+.portfolio .portfolio-content .portfolio-grid {}
+.portfolio .portfolio-content .portfolio-grid.all-grid {}
+.portfolio .portfolio-content .portfolio-grid.app-grid {}
+.portfolio .portfolio-content .portfolio-grid.card-grid {}
+.portfolio .portfolio-content .portfolio-grid.web-grid {}
 
-    .portfolio .portfolio-content {
-    width: 100%;
-    }
 
-    .portfolio .portfolio-content .portfolio-grid {
-    display: none;
-    gap: 24px;
-    }
+/* ex: all이 input되면 포토폴리오 컨텐츠에 있는 그리드중 all그리드가 뜨게하기위한 틀 */
+.portfolio #portfolio-all:checked ~ .portfolio-content .all-grid {}
+.portfolio #portfolio-app:checked ~ .portfolio-content .app-grid {}
+.portfolio #portfolio-card:checked ~ .portfolio-content .card-grid {}
+.portfolio #portfolio-web:checked ~ .portfolio-content .web-grid {}
 
-    .portfolio .portfolio-content .portfolio-grid.all-grid {
-    grid-template-columns: repeat(3, 1fr);
-    }
 
-    .portfolio .portfolio-content .portfolio-grid.app-grid {}
+.portfolio .portfolio-item {}
+.portfolio .portfolio-item img {}
+.portfolio .portfolio-item .portfolio-info {}
+.portfolio .portfolio-item .portfolio-info h3 {}
+.portfolio .portfolio-item .portfolio-info p {}
+.portfolio .portfolio-item:hover .portfolio-info {}
 
-    .portfolio .portfolio-content .portfolio-grid.card-grid {}
 
-    .portfolio .portfolio-content .portfolio-grid.web-grid {}
+/* 후에 여기다 애니메이션, 반응형 넣을예정! */
 
-    /* ex: all이 input되면 포토폴리오 컨텐츠에 있는 그리드중 all그리드가 뜨게하기위한 틀 */
-    .portfolio #portfolio-all:checked ~ .portfolio-content .all-grid,
-    .portfolio #portfolio-app:checked ~ .portfolio-content .app-grid,
-    .portfolio #portfolio-card:checked ~ .portfolio-content .card-grid,
-    .portfolio #portfolio-web:checked ~ .portfolio-content .web-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    animation: portfolioShow 0.45s ease;
-    }
 
-    /* 추가: All 화면을 원본처럼 빈칸 없이 보이게 하기 위해 masonry 느낌 적용 */
-    .portfolio #portfolio-all:checked ~ .portfolio-content .all-grid {
-    display: block;
-    column-count: 3;
-    column-gap: 24px;
-    }
 
-    /* 추가: All grid에서는 item 간 아래 여백 필요 */
-    .portfolio #portfolio-all:checked ~ .portfolio-content .all-grid .portfolio-item {
-    margin-bottom: 24px;
-    break-inside: avoid;
-    }
-
-    /* 추가: App/Card/Web은 3장씩 가로 배치 */
-    .portfolio #portfolio-app:checked ~ .portfolio-content .app-grid,
-    .portfolio #portfolio-card:checked ~ .portfolio-content .card-grid,
-    .portfolio #portfolio-web:checked ~ .portfolio-content .web-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    }
-
-    .portfolio .portfolio-item {
-    position: relative;
-    overflow: hidden;
-    }
-
-    .portfolio .portfolio-item img {
-    width: 100%;
-    display: block;
-    }
-
-    /* 추가: 원본 Arsha처럼 밑에서 올라오는 info 박스 */
-    .portfolio .portfolio-item .portfolio-info {
-    opacity: 0;
-    position: absolute;
-    left: 12px;
-    right: 12px;
-    bottom: -100%;
-    z-index: 3;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.9);
-    transition: all ease-in-out 0.5s;
-    }
-
-    .portfolio .portfolio-item .portfolio-info h3 {
-    margin: 0 0 5px;
-    color: var(--primary-color);
-    font-size: 18px;
-    font-weight: 600;
-    }
-
-    .portfolio .portfolio-item .portfolio-info p {
-    margin: 0;
-    color: var(--text-body);
-    font-size: 14px;
-    }
-
-    .portfolio .portfolio-item:hover .portfolio-info {
-    opacity: 1;
-    bottom: 0;
-    }
-
-    /* 추가: grid가 바뀔 때 살짝 나타나는 효과 */
-    @keyframes portfolioShow {
-    from {
-        opacity: 0;
-        transform: translateY(18px) scale(0.97);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-    }
-
-    /* 추가: 반응형 */
-    @media (max-width: 992px) {
-    .portfolio #portfolio-all:checked ~ .portfolio-content .all-grid {
-        column-count: 2;
-    }
-
-    .portfolio #portfolio-app:checked ~ .portfolio-content .app-grid,
-    .portfolio #portfolio-card:checked ~ .portfolio-content .card-grid,
-    .portfolio #portfolio-web:checked ~ .portfolio-content .web-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    }
-
-    @media (max-width: 576px) {
-    .portfolio #portfolio-all:checked ~ .portfolio-content .all-grid {
-        column-count: 1;
-    }
-
-    .portfolio #portfolio-app:checked ~ .portfolio-content .app-grid,
-    .portfolio #portfolio-card:checked ~ .portfolio-content .card-grid,
-    .portfolio #portfolio-web:checked ~ .portfolio-content .web-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .portfolio .portfolio-filters label {
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
-    }
