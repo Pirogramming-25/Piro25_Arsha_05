@@ -1,3 +1,4 @@
+/* 헤더 기본 설정 */
 header {
     display: flex;
     flex-direction: column;
@@ -6,6 +7,7 @@ header {
     z-index: 999;
 }
 
+/* 데모바 설정 및 구현 */
 header .demo-bar {
     height: 2rem;
     background: #22488a;
@@ -19,6 +21,7 @@ header .demo-bar {
     box-sizing: border-box;
 }
 
+/* 데모바 - 왼쪽 부분 */
 .left-header-element {
     display: flex;
     flex-direction: row;
@@ -53,6 +56,7 @@ header .demo-bar {
     height: 20px;
 }
 
+/* 데모바 - 중간 부분 */
 .middle-header-element {
     display: flex;
     flex-direction: row;
@@ -82,6 +86,7 @@ header .demo-bar {
     color: var(--bg-white);
 }
 
+/* 데모바 - 오른쪽 부분 */
 .right-header-element {
     display: flex;
     flex-direction: row;
@@ -100,8 +105,6 @@ header .demo-bar {
 
     gap: 7px;
 }
-
-
 
 .right-header-element .right-header-btn svg {
     fill: var(--bg-white);
@@ -135,6 +138,7 @@ header .demo-bar {
     color: var(--bg-white);
 }
 
+/* 투명 헤더 설정 및 구현 */
 header .transparent-header {
     height: 5rem;
     background-color: color-mix(in srgb, var(--primary-color) 90%, transparent);
@@ -149,6 +153,7 @@ header .transparent-header {
     box-sizing: border-box;
 }
 
+/* 대 제목 */
 .transparent-header #header-arsha a {
     font-size: 30px;
     font-weight: 500; 
@@ -156,6 +161,7 @@ header .transparent-header {
     padding: 0 45px;
 }
 
+/* 메뉴 부분 */
 .header-menu-group {
     display: flex;
     flex-direction: row;
