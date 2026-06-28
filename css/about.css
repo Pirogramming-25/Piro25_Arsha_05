@@ -1,0 +1,24 @@
+.about {}
+.about .about-title {}
+.about .about-title h1 {}
+.about .about-title .about-title-divider {}
+
+.about-text-left {}
+.about-text-left p {}
+.about-text-left .about-text-check {}
+.about-text-check .text-check {}
+.about-text-check .text-check.first-text {}
+.about-text-check .text-check.first-text svg {}
+.about-text-check .text-check.first-text p {}
+.about-text-check .text-check.second-text {}
+.about-text-check .text-check.second-text svg {}
+.about-text-check .text-check.second-text p {}
+.about-text-check .text-check.third-text {}
+.about-text-check .text-check.third-text svg {}
+.about-text-check .text-check.third-text p {}
+
+.about-text-right {}
+.about-text-right p {}
+.about-text-right .about-read-more-btn {}
+.about-read-more-btn p {}
+.about-read-more-btn svg {}
