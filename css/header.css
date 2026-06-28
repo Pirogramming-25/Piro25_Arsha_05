@@ -1,21 +1,101 @@
-header {}
-header .demo-bar {}
+header {
+    display: flex;
+    flex-direction: column;
+}
+header .demo-bar {
+    height: 2rem;
+    background: #22488a;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
-.left-header-element img {}
-.left-header-element .media-button {}
-.media-button .media {}
-.media-button .media .monitor-btn {}
-.media-button .media .tablet-btn {}
-.media-button .media .mobile-btn {}
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
 
-.middle-header-element {}
+.left-header-element {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
 
-.right-header-element {}
-.right-header-element .demo-hide-btn {}
-.right-header-element .demo-hide-btn img {}
-.right-header-element .download-btn {}
-.right-header-element .download-btn img {}
-.right-header-element .download-btn span {}
+.left-header-element img {
+    width: 175px;
+    height: 25px;
+}
+
+.media-button {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+.media-button .media-btn svg {
+    fill: var(--bg-white);
+    width: 20px;
+    height: 20px;
+}
+.media-button .media-btn .monitor-btn {}
+.media-button .media-btn .tablet-btn {}
+.media-button .media-btn .mobile-btn {}
+
+.middle-header-element {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+
+
+.middle-header-element a:nth-child(1) {
+    color: var(--text-muted);
+    font-weight: bold;
+}
+
+.middle-header-element a:nth-child(2) {
+    color: var(--bg-white);
+    font-weight: bold;
+}
+
+.middle-header-element a:nth-child(3) {
+    color: var(--text-muted);
+    font-weight: bold;
+}
+
+.right-header-element {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.right-header-element .right-header-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+}
+
+.right-header-element .right-header-btn svg {
+    fill: var(--bg-white);
+    width: 20px;
+    height: 20px;
+}
+
+.right-header-element .right-header-btn.download-btn  {
+    background-color: var(--accent-color);
+    height: 100%;
+}
+
+.right-header-element .right-header-btn span {
+    color: var(--bg-white);
+}
 
 header .transparent-header {}
 .header-arsha {}
