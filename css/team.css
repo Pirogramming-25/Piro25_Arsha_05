@@ -2,7 +2,7 @@
    team section
 =========================== */
 .team {
-    background-color: #ffffff;
+    background-color:var(--bg-white);
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -18,8 +18,7 @@
 .team--header-title {
     font-size: 32px;
     font-weight: 700;
-    color: #37517e;
-    letter-spacing: 1px;
+    color:var(--primary-color);
     margin-bottom: 16px; 
     font-family: 'Jost', sans-serif;
 }
@@ -43,13 +42,15 @@
     display: inline-block;
     width: 60px;
     height: 3px;
-    background-color: #47b2e4;
+    background-color: var(--accent-color);
 }
  
 .team-header-desc {
     font-size: 15px;
-    color: #6c757d;
+    color: var(--text-body);
+    line-height: 20px;
     max-width: 700px;
+    padding: 0 10px;
     margin: 0 auto;
 }
  
@@ -71,7 +72,7 @@
     gap: 24px;
     padding: 30px 28px;
     border-radius: 8px;
-    background-color: #ffffff;
+    background-color: var(--bg-white);
     box-shadow: 0 5px 24px rgba(0, 0, 0, 0.1);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -113,7 +114,7 @@
 .team-member-info-name {
     font-size: 20px;
     font-weight: 700;
-    color: #38517E;
+    color: var(--text-title);
     margin-bottom: 9px;
     font-family: 'Jost', sans-serif;
 }
@@ -121,7 +122,7 @@
 .team-member-info-role {
     font-size: 15px;
     font-weight: 500;
-    color: #444;
+    color: var(--text-body);
     margin-bottom: 15px;
 }
  
@@ -136,7 +137,7 @@
  
 .team-member-info-desc {
     font-size: 14px;
-    color: #444;
+    color: var(--text-body);
     font-weight: 400;
     line-height: 1.65;
     margin-bottom: 12px;
@@ -173,7 +174,7 @@
 }
  
 .team-social-icon:hover {
-    background-color: #209dd8;
+    background-color:var(--accent-hover);
 }
  
 .team-social-icon:hover img {
