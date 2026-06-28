@@ -116,7 +116,10 @@ git merge develop
 
 ### 2. 작업 도중 저장 (하나의 작은 단위가 끝날 때마다 자주 실행!)
 ```bash
-git add .
+git status
+# 상태는 add 전후 수시로 확인하는 것 추천합니다.
+
+git add "파일명"
 git commit -m "커밋메시지"
 ```
 
