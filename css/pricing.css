@@ -208,7 +208,7 @@
 /* ===========================
    태블릿: 1열
 =========================== */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .pricing-plan-grid {
         grid-template-columns: 1fr;
         max-width: 800px;
@@ -218,7 +218,7 @@
 /* ===========================
    모바일: 1열 + 중앙 정렬
 =========================== */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
     .pricing-plan-grid {
         grid-template-columns: 1fr;
         max-width: 550px;
