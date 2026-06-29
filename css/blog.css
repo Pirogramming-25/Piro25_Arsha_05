@@ -145,7 +145,7 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 0 30px 30px;
+    padding: 0 30px 20px;
     color: var(--text-muted);
     font-size: 15px;
     font-weight: 400;
@@ -158,12 +158,12 @@
     align-items: center;
     gap: 8px;
 }
-
-.author-title img,
-.category-title img {
+.author-title svg,
+.category-title svg {
     width: 16px;
     height: 16px;
-    object-fit: contain;
+    color: var(--accent-hover);
+    flex-shrink: 0;
 }
 
 .per-icon {
