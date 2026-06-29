@@ -1,0 +1,445 @@
+.portfolio {
+    background-color: var(--background-color);
+    padding: 60px 0;
+} 
+.portfolio .portfolio-title {
+    text-align: center;
+    margin-bottom: 30px;
+} 
+.portfolio .portfolio-title h2 {
+    color: var(--primary-color);
+    font-family: 'Jost', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: -7px;
+} 
+.portfolio .portfolio-title p {
+    color: var(--text-body);
+    margin: 0;
+} 
+
+.portfolio .portfolio-title .title-divider {
+    width: 160px;
+    height: 1px;
+    background-color: #d6d6d6;
+    margin: 20px auto;
+    position: relative;
+}
+
+.portfolio .portfolio-title .title-divider::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%);
+}
+
+.portfolio input {display: none;} 
+.portfolio input[type="radio"] {display: none;} 
+
+#portfolio-all {}
+#portfolio-app {}
+#portfolio-card {}
+#portfolio-web {}
+
+.portfolio .portfolio-filters {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.portfolio .portfolio-filters label {
+    display: inline-block;
+    padding: 8px 20px 10px 20px;
+    margin: 22px 1px 3px;
+    border-radius: 50px;
+    cursor: pointer;
+    color: var(--text-body);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Jost', sans-serif;
+}
+.portfolio .portfolio-filters label[for = "portfolio-all"] {}
+.portfolio .portfolio-filters label[for = "portfolio-app"] {}
+.portfolio .portfolio-filters label[for = "portfolio-card"] {}
+.portfolio .portfolio-filters label[for = "portfolio-web"] {}
+.portfolio .portfolio-filters label:hover {}
+
+/* all라디오가 input되면 그 input과 연결된 라벨을 꾸미는 코드!(눈에보이는게 라벨, 상태는 라디오) */
+/* hover와 선택됐을경우 모두 같은 기능 */
+.portfolio .portfolio-filters label:hover,
+.portfolio #portfolio-all:checked ~ .portfolio-filters label[for="portfolio-all"],
+.portfolio #portfolio-app:checked ~ .portfolio-filters label[for="portfolio-app"],
+.portfolio #portfolio-card:checked ~ .portfolio-filters label[for="portfolio-card"],
+.portfolio #portfolio-web:checked ~ .portfolio-filters label[for="portfolio-web"] {
+    color: var(--bg-white);
+    background-color: var(--accent-color);
+}
+
+.portfolio .portfolio-content {}
+.portfolio .portfolio-content .portfolio-grid {}
+.portfolio .portfolio-content .portfolio-grid.all-grid {}
+.portfolio .portfolio-content .portfolio-grid.app-grid {}
+.portfolio .portfolio-content .portfolio-grid.card-grid {}
+.portfolio .portfolio-content .portfolio-grid.web-grid {}
+
+
+/* ex: all이 input되면 포토폴리오 컨텐츠에 있는 그리드중 all그리드가 뜨게하기위한 틀 */
+.portfolio #portfolio-all:checked ~ .portfolio-content .all-grid,
+.portfolio #portfolio-app:checked ~ .portfolio-content .app-grid,
+.portfolio #portfolio-card:checked ~ .portfolio-content .card-grid,
+.portfolio #portfolio-web:checked ~ .portfolio-content .web-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+    animation: portfolioPop 0.8s ease-in-out;
+}
+
+/* 추가: 기본적으로 모든 grid 숨김 */
+.portfolio .portfolio-content .portfolio-grid {
+    display: none;
+}
+
+
+.portfolio #portfolio-all:checked ~ .portfolio-content .all-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+    animation: portfolioPop 0.8s ease-in-out;
+}
+
+.portfolio .all-grid .portfolio-item:nth-child(1),
+.portfolio .all-grid .portfolio-item:nth-child(5),
+.portfolio .all-grid .portfolio-item:nth-child(6) {
+    grid-row: span 2;
+}
+
+
+.portfolio .all-grid .portfolio-item:nth-child(9) {
+    transform: translateY(-24px);
+}
+
+.portfolio .all-grid .portfolio-item:nth-child(6) {
+    transform: translateY(-24px);
+}
+
+
+
+/* 추가: 이미지 영역 */
+.portfolio .portfolio-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio .portfolio-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+
+
+
+/* 추가: App/Card/Web은 3장씩 가로 배치 */
+.portfolio #portfolio-app:checked ~ .portfolio-content .app-grid,
+.portfolio #portfolio-card:checked ~ .portfolio-content .card-grid,
+.portfolio #portfolio-web:checked ~ .portfolio-content .web-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* 추가: 원본 Arsha처럼 밑에서 올라오는 info 박스 */
+.portfolio .portfolio-item .portfolio-info {
+    opacity: 0;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: -100%;
+    z-index: 3;
+    padding: 15px;
+    background: rgba(255,255,255,0.88); 
+    transition: all ease-in-out 0.5s;
+}
+
+.portfolio .portfolio-item {  position: relative; overflow: hidden;}
+
+.portfolio .portfolio-item .portfolio-info {}
+.portfolio .portfolio-item .portfolio-info h3 {
+    margin: 0 0 5px;
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Jost', sans-serif;
+}
+.portfolio .portfolio-item .portfolio-info p {
+    margin: 0;
+    color: color-mix(in srgb, var(--text-body), transparent 30%);
+    font-size: 14px;
+}
+.portfolio .portfolio-item:hover .portfolio-info {
+    opacity: 1;
+    bottom: 0;
+}
+
+
+
+
+/* 추가: grid 전환 애니메이션 */
+@keyframes portfolioPop {
+    0% {
+        opacity: 0;
+        transform: scale(0.75);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.04);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 아이콘 꾸미기 */
+
+.portfolio .portfolio-item .portfolio-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portfolio .portfolio-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio .portfolio-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.portfolio .portfolio-links a {
+    display: flex;
+    color: color-mix(in srgb, var(--text-body), transparent 30%);
+    transition: color .3s ease;
+}
+
+.portfolio .portfolio-links svg {
+    width: 25px;
+    height: 25px;
+    fill: currentColor;
+}
+
+.portfolio .portfolio-links a:hover {
+    color: var(--accent-hover);
+}
+
+
+/* 반응형 구현 */
+
+/* 태블릿: 2열 */
+@media (max-width: 991px) {
+    .portfolio #portfolio-all:checked ~ .portfolio-content .all-grid,
+    .portfolio #portfolio-app:checked ~ .portfolio-content .app-grid,
+    .portfolio #portfolio-card:checked ~ .portfolio-content .card-grid,
+    .portfolio #portfolio-web:checked ~ .portfolio-content .web-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        grid-auto-flow: dense;
+    }
+
+    .portfolio .all-grid .portfolio-item:nth-child(9) {
+        transform: none;
+    }
+
+    .portfolio .all-grid .portfolio-item {
+        grid-row: auto !important;
+        transform: none !important;
+    }
+
+    .portfolio .portfolio-item img {
+        height: auto;
+    }
+
+    .portfolio .portfolio-content {
+        width: 92%;
+        margin: 0 auto;
+    }
+
+    
+}
+
+/* 모바일: 1열 */
+@media (max-width: 575px) {
+    .portfolio #portfolio-all:checked ~ .portfolio-content .all-grid,
+    .portfolio #portfolio-app:checked ~ .portfolio-content .app-grid,
+    .portfolio #portfolio-card:checked ~ .portfolio-content .card-grid,
+    .portfolio #portfolio-web:checked ~ .portfolio-content .web-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio .all-grid .portfolio-item:nth-child(1),
+    .portfolio .all-grid .portfolio-item:nth-child(5),
+    .portfolio .all-grid .portfolio-item:nth-child(6) {
+        grid-row: auto;
+    }
+
+    .portfolio .all-grid .portfolio-item:nth-child(9) {
+        transform: none;
+    }
+
+        .portfolio .portfolio-filters {
+        white-space: nowrap;
+    }
+
+    .portfolio .portfolio-filters label {
+        padding: 8px 16px 10px 16px;
+        margin: 20px 1px 3px;
+        font-size: 14px;
+    }
+
+        /* 여백 */
+    .portfolio {
+        padding: 40px 0;
+    }
+
+    .portfolio .portfolio-title {
+        margin-bottom: 20px;
+    }
+
+    .portfolio .portfolio-content {
+            width: 88%;
+            margin: 0 auto;
+            padding: 0;
+    }
+
+        .portfolio .all-grid .portfolio-item {
+        grid-row: auto !important;
+        transform: none !important;
+    }
+
+    .portfolio .portfolio-item img {
+        height: auto;
+    }
+}
+
+
+/* Portfolio tablet layout fix */
+@media (max-width: 991px) and (min-width: 576px) {
+    .portfolio #portfolio-app:checked ~ .portfolio-content .app-grid,
+    .portfolio #portfolio-card:checked ~ .portfolio-content .card-grid,
+    .portfolio #portfolio-web:checked ~ .portfolio-content .web-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        align-items: start;
+    }
+
+    /* App: left tall image, right two images */
+    .portfolio #portfolio-app:checked ~ .portfolio-content .app-grid {
+        grid-template-areas:
+            "app1 app2"
+            "app1 app3";
+    }
+
+    .portfolio .app-grid .portfolio-item:nth-child(1) {
+        grid-area: app1;
+    }
+
+    .portfolio .app-grid .portfolio-item:nth-child(2) {
+        grid-area: app2;
+    }
+
+    .portfolio .app-grid .portfolio-item:nth-child(3) {
+        grid-area: app3;
+    }
+
+    /* Card: right tall image, left two images */
+    .portfolio #portfolio-card:checked ~ .portfolio-content .card-grid {
+        grid-template-areas:
+            "card1 card2"
+            "card3 card2";
+    }
+
+    .portfolio .card-grid .portfolio-item:nth-child(1) {
+        grid-area: card1;
+    }
+
+    .portfolio .card-grid .portfolio-item:nth-child(2) {
+        grid-area: card2;
+    }
+
+    .portfolio .card-grid .portfolio-item:nth-child(3) {
+        grid-area: card3;
+    }
+
+    /* Web: same as Card */
+    .portfolio #portfolio-web:checked ~ .portfolio-content .web-grid {
+        grid-template-areas:
+            "web1 web2"
+            "web3 web2";
+    }
+
+    .portfolio .web-grid .portfolio-item:nth-child(1) {
+        grid-area: web1;
+    }
+
+    .portfolio .web-grid .portfolio-item:nth-child(2) {
+        grid-area: web2;
+    }
+
+    .portfolio .web-grid .portfolio-item:nth-child(3) {
+        grid-area: web3;
+    }
+
+    .portfolio .app-grid .portfolio-item,
+    .portfolio .card-grid .portfolio-item,
+    .portfolio .web-grid .portfolio-item {
+        overflow: hidden;
+    }
+
+    .portfolio .app-grid .portfolio-item img,
+    .portfolio .card-grid .portfolio-item img,
+    .portfolio .web-grid .portfolio-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+/* Portfolio All tablet layout - masonry style */
+@media (max-width: 991px) and (min-width: 576px) {
+    .portfolio #portfolio-all:checked ~ .portfolio-content .all-grid {
+        display: block;
+        column-count: 2;
+        column-gap: 24px;
+        animation: portfolioPop 0.8s ease-in-out;
+    }
+
+    .portfolio #portfolio-all:checked ~ .portfolio-content .all-grid .portfolio-item {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 24px;
+        break-inside: avoid;
+        transform: none !important;
+        grid-row: auto !important;
+    }
+
+    .portfolio #portfolio-all:checked ~ .portfolio-content .all-grid .portfolio-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+}
