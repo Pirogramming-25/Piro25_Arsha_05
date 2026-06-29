@@ -163,14 +163,13 @@
     flex-direction: column;
     justify-content: flex-start;
     color: var(--text-body);
+    gap: 12px;
 }
 .footer-follow-contents p {
     font-size: 0.9rem;
+    font-family: var(--nav-font);
     color: var(--text-muted);
 }
-.footer-follow-contents .follow-contact-group {}
-.follow-contact-group a {}
-.follow-contact-group svg {}
 
 .footer-copyright {
     background-color: aquamarine;
