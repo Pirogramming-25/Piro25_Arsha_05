@@ -1,7 +1,7 @@
 /* 4. Why us */
 
 .why-us {
-    background-color: #f5f6f8;
+    background-color: var(--bg-light);
 }
 
 .why-us .why-us-content {
