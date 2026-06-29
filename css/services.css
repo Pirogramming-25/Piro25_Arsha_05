@@ -90,3 +90,20 @@
 .services-card:hover h3 {
     color: var(--accent-color);
 }
+
+@media (max-width: 1024px) {
+    .services-card {
+        flex: 1 1 calc(50% - 12px);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-card-group {
+        flex-direction: column;
+    }
+    
+    .services-card {
+        width: 100%;
+        flex: 1 1 100%;
+    }
+}
