@@ -104,7 +104,18 @@
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 992px) {
+@media (max-width: 1279px) {
+    .call-text {
+        flex: 0 0 70%;
+        max-width: 70%;
+    }
+    .call-button-wrap {
+        flex: 0 0 30%;
+        max-width: 30%;
+    }
+}
+
+@media (max-width: 768px) {
     .call-to-action {
         padding: 80px 0;
         background-attachment: scroll;
@@ -134,7 +145,7 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
     .call-to-action {
         padding: 60px 0;
     }

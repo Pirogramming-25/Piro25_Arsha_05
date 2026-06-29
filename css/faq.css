@@ -168,7 +168,7 @@
 
 
 /* ===== Responsive ===== */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .faq-header {
         padding-bottom: 40px;
     }
@@ -189,5 +189,30 @@
 
     .faq-answer {
         padding: 0 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-title {
+        font-size: 24px;
+    }
+    .faq-title::before {
+        width: 120px;
+    }
+    .faq-question {
+        padding: 14px;
+        gap: 8px;
+    }
+    .faq-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+    .faq-question-text {
+        font-size: 15px;
+    }
+    .faq-answer p {
+        font-size: 14px;
+        line-height: 22px;
     }
 }
