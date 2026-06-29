@@ -304,16 +304,30 @@
     }
 }
 
-@media (max-width: 768px) {
+/* 중간 화면: 481px ~ 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    .skills .container {
+        width: auto;
+        margin: 0 24px;
+    }
+
     .skills .skills-content {
         grid-template-columns: 1fr;
         gap: 30px;
-        padding: 0 48px;
+        padding: 0;
     }
 
     .skills .skills-image img {
-        margin: 0 auto;
+        width: 100%;
         max-width: 460px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        transform: none;
+    }
+
+    .skills .skills-text {
+        padding: 0;
     }
 
     .skills .skills-text h3 {
@@ -321,16 +335,45 @@
     }
 }
 
+/* 작은 화면: 480px 이하 */
 @media (max-width: 480px) {
+    .skills .container {
+        width: auto;
+        margin: 0 14px;
+    }
+
     .skills .skills-content {
-        padding: 0 28px;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0;
     }
 
     .skills .skills-image img {
-        max-width: 100%;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        transform: none;
+    }
+
+    .skills .skills-text {
+        padding: 0;
     }
 
     .skills .skills-text h3 {
-        font-size: 24px;
+        font-size: 28px;
+    }
+}
+
+/* 769px ~ 1199px: PC 배치로 돌아갈 때 오른쪽 여백 보정 */
+@media (min-width: 769px) and (max-width: 1199px) {
+    .skills .container {
+        width: auto;
+        margin: 0 40px;
+    }
+
+    .skills .skills-content {
+        gap: 40px;
     }
 }
