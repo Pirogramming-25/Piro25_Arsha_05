@@ -11,7 +11,7 @@
     padding: 0 12px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     column-gap: 24px;
     box-sizing: border-box;
 }
@@ -65,7 +65,6 @@
     flex: 0 0 100%;
     margin: 0;
     color: var(--text-body);
-    font-family: var(--body-font);
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -115,12 +114,11 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    padding: 10px 16px;
+    padding: 12px 6px 12px 6px;
     background: var(--accent-color);
     color: var(--bg-white);
-    font-family: var(--body-font);
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 500;
     line-height: 20px;
     text-transform: uppercase;
     z-index: 2;
@@ -149,7 +147,6 @@
     gap: 14px;
     padding: 0 30px 30px;
     color: var(--text-muted);
-    font-family: var(--body-font);
     font-size: 15px;
     font-weight: 400;
     line-height: 22px;
@@ -181,8 +178,7 @@
     margin: 0 30px;
     padding: 20px 0 26px;
     border-top: 1px solid #eeeeee;
-    color: #777777;
-    font-family: var(--body-font);
+    color: #8f8f8f;
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
@@ -196,7 +192,7 @@
 }
 
 .readmore-arrow {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1;
 }
 
