@@ -377,3 +377,15 @@
         gap: 40px;
     }
 }
+
+/* 769px ~ 1199px: 큰 화면에서 중간 화면으로 줄어들 때 좌우 여백 보정 */
+@media (min-width: 769px) and (max-width: 1199px) {
+    .why-us .container {
+        width: auto;
+        margin: 0 10px;
+    }
+
+    .why-us .why-us-content {
+        gap: 50px;
+    }
+}
