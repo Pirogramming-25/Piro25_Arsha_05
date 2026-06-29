@@ -1,25 +1,21 @@
 .footer {
     background-color: var(--bg-white);
-
     display: flex;
     flex-direction: column;
 }
 
 .footer-menu {
-    background-color: aqua;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     
     width: 100%;
-    padding: 60px 40px;
+    padding: 40px 40px;
     box-sizing: border-box;
 }
 
 .footer-menu .footer-left {
-    background-color: antiquewhite;
     width: 20%;
     
     display: flex;
@@ -32,14 +28,16 @@
     font-size: 30px;
     font-weight: 500;
     letter-spacing: 2px;
-    padding-bottom: 1rem;
+    padding-bottom: 8px;
 }
 
 .footer-menu .footer-left p {
+    font-size: 0.9rem;
     font-family: var(--nav-font);
+    color: var(--text-muted);
 }
 .footer-left .footer-arsha-contact {
-    margin-top: 5px;
+    margin-top: 2px;
 }
 .footer-left .footer-arsha-contact p {
     font-family: var(--nav-font);
@@ -47,18 +45,16 @@
 
 .footer-right {
     width: 65%;
-    background-color: blueviolet;
 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
 
-    gap: 2.5rem;
+    gap: 10px;
 }
 
 .footer-right .footer-links-group {
-    background-color: red;
     display: flex;
     flex-direction: column;
     width: 35%;
@@ -101,10 +97,9 @@
 .footer-links-group .footer-links.link-terms {}
 
 .footer-services-group {
-    background-color: red;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 40%;
     justify-content: flex-start;
     gap: 10px;
 }
@@ -170,10 +165,41 @@
     font-family: var(--nav-font);
     color: var(--text-muted);
 }
+.follow-contact-group {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: flex-start;
 
-.footer-copyright {
-    background-color: aquamarine;
+    gap: 10px;
 }
-.footer-copyright p {}
-.footer-copyright .copyright-arsha {}
-.footer-copyright .copyright-designed-by {}
+.follow-contact-group .footer-contact-btn svg {
+    fill: var(--text-body);
+    width: 32px;
+    height: 32px;
+    padding: 5px;
+    border: 1px solid var(--text-body);
+    border-radius: 50%;
+}
+.footer-copyright {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    border: 0.1px solid var(--text-muted);
+    box-sizing: border-box;
+}
+.footer-copyright p {
+    font-size: 0.9rem;
+    color: var(--text-title);
+}
+
+.footer-copyright #copyright-home {
+    color: var(--accent-color);
+}
+
+/* 애니메이션 열라 귀차늠 나중에.. */
