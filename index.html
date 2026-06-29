@@ -30,6 +30,79 @@
 <body>
     <!-- 1. 헤더 - 담당부원: 유채영 -->
     <header>
+        <div class="demo-bar">
+            <div class="left-header-element">
+                <!-- BOOTSTRAPMADE 로고와 텍스트 (트랜지션) -->
+                <a href="/index.html"><img src="images/header/logo.png" alt="헤더로고"></a>
+
+                <!-- 미디어별 전환 버튼 (버튼 속성 구현 X - JS 영역) -->
+                <div class="media-button">
+                    <a href="#" class="media-btn monitor-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="monitor-svg" viewBox="0 0 16 16">
+                            <path d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4q0 1 .25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75Q6 13 6 12H2s-2 0-2-2zm1.398-.855a.76.76 0 0 0-.254.302A1.5 1.5 0 0 0 1 4.01V10c0 .325.078.502.145.602q.105.156.302.254a1.5 1.5 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.76.76 0 0 0 .254-.302 1.5 1.5 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.76.76 0 0 0-.302-.254A1.5 1.5 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="media-btn tablet-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="tablet-svg" viewBox="0 0 16 16">
+                            <path d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                            <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="media-btn mobile-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mobile-svg" viewBox="0 0 16 16">
+                            <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                            <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="middle-header-element">
+                <!-- 화살표 1 (트랜지션) -->
+                <a href="#"><</a>
+                <!-- Arsha 작은 글씨 -->
+                <a href="index.html">Arsha</a>
+                <!-- 화살표 2 (트랜지션) -->
+                <a href="#">></a>
+            </div>
+            <div class="right-header-element">
+                <!-- 데모바 숨기기 버튼 (트랜지션) -->
+                <a href="#" class="right-header-btn demo-hide-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="demo-hide-svg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                        <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+                    </svg>
+                </a>
+                <!-- 다운로드 버튼 (트랜지션) -->
+                <a href="#" class="right-header-btn download-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="download-svg" viewBox="0 0 16 16">
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                    </svg>
+                    <span>DOWNLOAD</span>
+                </a>
+            </div>
+        </div>
+        <div class="transparent-header">
+            <!-- Arsha 큰 글씨 -->
+            <h1 id="header-arsha"><a href="index.html">ARSHA</a></h1>
+        
+            <div class="header-menu-group">
+                <!-- 메뉴 부분 (트랜지션) -->
+                <nav class="nav-menu">
+                    <a href="/index.html">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Portfolio</a>
+                    <a href="#">Team</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Dropdown</a>
+                    <a href="#">Contact</a>
+                </nav>
+                <!-- 시작 버튼 (트랜지션) -->
+                <a href="#" class="get-started-btn">Get Started</a>
+            </div>
+        </div>
     </header>
 
     <!-- 2. Hero - 담당부원: 유채영 -->
