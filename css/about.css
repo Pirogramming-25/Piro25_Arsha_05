@@ -178,3 +178,11 @@
         padding: 0 48px;
     }
 }
+
+/* 992px ~ 1199px: 큰 화면에서 중간 화면으로 줄어들 때 좌우 여백 보정 */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .about .container {
+        width: auto;
+        margin: 0 40px;
+    }
+}
