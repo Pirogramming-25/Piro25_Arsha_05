@@ -1,3 +1,5 @@
+/* 4. Why us */
+
 .why-us {
     background-color: #f5f6f8;
 }
@@ -197,5 +199,133 @@
     .why-us:has(.why-us-item:nth-child(2)[open]) .why-us-image img,
     .why-us:has(.why-us-item:nth-child(3)[open]) .why-us-image img {
         transform: none;
+    }
+}
+
+
+
+/* 4-2. Skills */
+.skills {
+    background-color: var(--bg-white);
+}
+
+.skills .skills-content {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.skills .skills-image img {
+    width: 100%;
+    max-width: 680px;
+    height: auto;
+    display: block;
+}
+
+.skills .skills-text h3 {
+    color: var(--primary-color);
+    font-family: 'Jost', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 14px;
+}
+
+.skills .skills-text p {
+    color: color-mix(in srgb, var(--text-body), transparent 25%);
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0 0 24px;
+}
+
+.skills .skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.skills .skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.skills .skill-info span {
+    color: var(--text-heading);
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Jost', sans-serif;
+}
+
+.skills .skill-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e8edf5;
+    overflow: hidden;
+}
+
+.skills .skill-progress {
+    height: 100%;
+    background-color: var(--primary-color);
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: skillFill 1.2s ease forwards;
+}
+
+.skills .skill-progress.html {
+    width: 100%;
+    animation-delay: 0.1s;
+}
+
+.skills .skill-progress.css {
+    width: 90%;
+    animation-delay: 0.2s;
+}
+
+.skills .skill-progress.javascript {
+    width: 75%;
+    animation-delay: 0.3s;
+}
+
+.skills .skill-progress.photoshop {
+    width: 55%;
+    animation-delay: 0.4s;
+}
+
+@keyframes skillFill {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@media (max-width: 991px) {
+    .skills .skills-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 24px;
+    }
+
+    .skills .skills-image img {
+        margin: 0 auto;
+    }
+
+    .skills .skills-text h3 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 575px) {
+    .skills .skills-content {
+        padding: 0 16px;
+    }
+
+    .skills .skills-text h3 {
+        font-size: 24px;
     }
 }
