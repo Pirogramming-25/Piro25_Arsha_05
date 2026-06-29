@@ -99,7 +99,13 @@
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 991px) {
+@media (max-width: 1279px) {
+    .subscribe-box {
+        padding: 60px 60px 0;
+    }
+}
+
+@media (max-width: 768px) {
     .subscribe-box {
         flex-direction: column;
         align-items: center;
@@ -138,7 +144,7 @@
     }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 480px) {
     .subscribe-box {
         padding: 40px 20px;
     }
