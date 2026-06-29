@@ -1,0 +1,557 @@
+/* ===========================
+   testimonials section
+=========================== */
+.testimonials {
+    background-color:var(--bg-white);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+ 
+/* ===========================
+   testimonials Header
+=========================== */
+.testimonials-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+ 
+.testimonials-header-title {
+    font-size: 32px;
+    font-weight: 700;
+    color:var(--primary-color);
+    margin-bottom: 16px; 
+    font-family: 'Jost', sans-serif;
+}
+ 
+/* 구분선 */
+.testimonials-header-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+ 
+.testimonials-header-divider-line {
+    display: inline-block;
+    width: 50px;
+    height: 1px;
+    background-color: #b7b7b7;
+}
+ 
+.testimonials-header-divider-accent {
+    display: inline-block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+ 
+.testimonials-header-desc {
+    font-size: 15px;
+    color: var(--text-body);
+    line-height: 20px;
+    max-width: 700px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+ 
+/* ===========================
+  testimonials slider area
+=========================== */
+
+.testimonials-slider-area {
+    position: relative;
+}
+ 
+.testimonials-slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+ 
+.testimonials-slider {
+  display: flex;
+  width: 500%;
+  animation: slide-from-1 22.5s infinite;
+}
+ 
+/* ═══════════════════════════════════════════════════════
+ 기본 자동 슬라이드 (카드1부터 시작)
+ 22.5초 루프: 카드당 4초 유지 + 0.5초 전환
+════════════════════════════════════════════════════════ */
+.testimonials-slider {
+ display: flex;
+ width: 500%;
+ animation: slide-from-1 22.5s infinite;
+}
+ 
+/* 카드1부터 */
+@keyframes slide-from-1 {
+ 0% { transform: translateX(0%) }
+ 17.77% { transform: translateX(0%) }
+ 20% { transform: translateX(-20%) }
+ 37.77% { transform: translateX(-20%) }
+ 40% { transform: translateX(-40%) }
+ 57.77% { transform: translateX(-40%) }
+ 60% { transform: translateX(-60%) }
+ 77.77% { transform: translateX(-60%) }
+ 80% { transform: translateX(-80%) }
+ 97.77% { transform: translateX(-80%) }
+ 100% { transform: translateX(0%) }
+}
+ 
+/* 카드2부터: 2→3→4→5→1→2... */
+@keyframes slide-from-2 {
+ 0% { transform: translateX(-20%) }
+ 17.77% { transform: translateX(-20%) }
+ 20% { transform: translateX(-40%) }
+ 37.77% { transform: translateX(-40%) }
+ 40% { transform: translateX(-60%) }
+ 57.77% { transform: translateX(-60%) }
+ 60% { transform: translateX(-80%) }
+ 77.77% { transform: translateX(-80%) }
+ 80% { transform: translateX(0%) }
+ 97.77% { transform: translateX(0%) }
+ 100% { transform: translateX(-20%) }
+}
+ 
+/* 카드3부터: 3→4→5→1→2→3... */
+@keyframes slide-from-3 {
+ 0% { transform: translateX(-40%) }
+ 17.77% { transform: translateX(-40%) }
+ 20% { transform: translateX(-60%) }
+ 37.77% { transform: translateX(-60%) }
+ 40% { transform: translateX(-80%) }
+ 57.77% { transform: translateX(-80%) }
+ 60% { transform: translateX(0%) }
+ 77.77% { transform: translateX(0%) }
+ 80% { transform: translateX(-20%) }
+ 97.77% { transform: translateX(-20%) }
+ 100% { transform: translateX(-40%) }
+}
+ 
+/* 카드4부터: 4→5→1→2→3→4... */
+@keyframes slide-from-4 {
+ 0% { transform: translateX(-60%) }
+ 17.77% { transform: translateX(-60%) }
+ 20% { transform: translateX(-80%) }
+ 37.77% { transform: translateX(-80%) }
+ 40% { transform: translateX(0%) }
+ 57.77% { transform: translateX(0%) }
+ 60% { transform: translateX(-20%) }
+ 77.77% { transform: translateX(-20%) }
+ 80% { transform: translateX(-40%) }
+ 97.77% { transform: translateX(-40%) }
+ 100% { transform: translateX(-60%) }
+}
+ 
+/* 카드5부터: 5→1→2→3→4→5... */
+@keyframes slide-from-5 {
+ 0% { transform: translateX(-80%) }
+ 17.77% { transform: translateX(-80%) }
+ 20% { transform: translateX(0%) }
+ 37.77% { transform: translateX(0%) }
+ 40% { transform: translateX(-20%) }
+ 57.77% { transform: translateX(-20%) }
+ 60% { transform: translateX(-40%) }
+ 77.77% { transform: translateX(-40%) }
+ 80% { transform: translateX(-60%) }
+ 97.77% { transform: translateX(-60%) }
+ 100% { transform: translateX(-80%) }
+}
+ 
+/* 도트 클릭 시 해당 카드부터 시작하는 애니메이션으로 교체 */
+body:has(#testimonials-card1:target) .testimonials-slider {
+ animation-name: slide-from-1;
+}
+body:has(#testimonials-card2:target) .testimonials-slider {
+ animation-name: slide-from-2;
+}
+body:has(#testimonials-card3:target) .testimonials-slider {
+ animation-name: slide-from-3;
+}
+body:has(#testimonials-card4:target) .testimonials-slider {
+ animation-name: slide-from-4;
+}
+body:has(#testimonials-card5:target) .testimonials-slider {
+ animation-name: slide-from-5;
+}
+ 
+/* ═══════════════════════════════════════════════════════
+ 도트 강조 애니메이션 (슬라이더와 동일한 22.5초 루프)
+════════════════════════════════════════════════════════ */
+ 
+/* 기본: 카드1부터 */
+nav a[href="#testimonials-card1"] { animation: dot1-from-1 22.5s infinite }
+nav a[href="#testimonials-card2"] { animation: dot2-from-1 22.5s infinite }
+nav a[href="#testimonials-card3"] { animation: dot3-from-1 22.5s infinite }
+nav a[href="#testimonials-card4"] { animation: dot4-from-1 22.5s infinite }
+nav a[href="#testimonials-card5"] { animation: dot5-from-1 22.5s infinite }
+ 
+@keyframes dot1-from-1 {
+ 0% { background:var(--accent-hover); }
+ 17.77% { background:var(--accent-hover); }
+ 20% { background:#E3E3E3; }
+ 97.77% { background:#E3E3E3; }
+ 100% { background:var(--accent-hover); }
+}
+@keyframes dot2-from-1 {
+ 0% { background:#E3E3E3; }
+ 20% { background:#E3E3E3; }
+ 20.01% { background:var(--accent-hover); }
+ 37.77% { background:var(--accent-hover); }
+ 40% { background:#E3E3E3; }
+ 100% { background:#E3E3E3; }
+}
+@keyframes dot3-from-1 {
+ 0% { background:#E3E3E3; }
+ 40% { background:#E3E3E3; }
+ 40.01% { background:var(--accent-hover); }
+ 57.77% { background:var(--accent-hover); }
+ 60% { background:#E3E3E3; }
+ 100% { background:#E3E3E3; }
+}
+@keyframes dot4-from-1 {
+ 0% { background:#E3E3E3; }
+ 60% { background:#E3E3E3; }
+ 60.01% { background:var(--accent-hover); }
+ 77.77% { background:var(--accent-hover); }
+ 80% { background:#E3E3E3; }
+ 100% { background:#E3E3E3; }
+}
+@keyframes dot5-from-1 {
+ 0% { background:#E3E3E3; }
+ 80% { background:#E3E3E3; }
+ 80.01% { background:var(--accent-hover); }
+ 97.77% { background:var(--accent-hover); }
+ 100% { background:#E3E3E3; }
+}
+ 
+/* 도트2 클릭 시 */
+body:has(#testimonials-card2:target) nav a[href="#testimonials-card1"] { animation-name: dot1-from-2 }
+body:has(#testimonials-card2:target) nav a[href="#testimonials-card2"] { animation-name: dot2-from-2 }
+body:has(#testimonials-card2:target) nav a[href="#testimonials-card3"] { animation-name: dot3-from-2 }
+body:has(#testimonials-card2:target) nav a[href="#testimonials-card4"] { animation-name: dot4-from-2 }
+body:has(#testimonials-card2:target) nav a[href="#testimonials-card5"] { animation-name: dot5-from-2 }
+ 
+@keyframes dot2-from-2 {
+ 0% { background:var(--accent-hover); }
+ 17.77% { background:var(--accent-hover); }
+ 20% { background:#E3E3E3; }
+ 97.77% { background:#E3E3E3; }
+ 100% { background:var(--accent-hover); }
+}
+@keyframes dot3-from-2 {
+ 0% { background:#E3E3E3; }
+ 20% { background:#E3E3E3; }
+ 20.01% { background:var(--accent-hover); }
+ 37.77% { background:var(--accent-hover); }
+ 40% { background:#E3E3E3; }
+ 100% { background:#E3E3E3; }
+}
+@keyframes dot4-from-2 {
+ 0% { background:#E3E3E3; }
+ 40% { background:#E3E3E3; }
+ 40.01% { background:var(--accent-hover); }
+ 57.77% { background:var(--accent-hover); }
+ 60% { background:#E3E3E3; }
+ 100% { background:#E3E3E3; }
+}
+@keyframes dot5-from-2 {
+ 0% { background:#E3E3E3; }
+ 60% { background:#E3E3E3; }
+ 60.01% { background:var(--accent-hover); }
+ 77.77% { background:var(--accent-hover); }
+ 80% { background:#E3E3E3; }
+ 100% { background:#E3E3E3; }
+}
+@keyframes dot1-from-2 {
+ 0% { background:#E3E3E3; }
+ 80% { background:#E3E3E3; }
+ 80.01% { background:var(--accent-hover); }
+ 97.77% { background:var(--accent-hover); }
+ 100% { background:#E3E3E3; }
+}
+ 
+/* 도트3 클릭 시 */
+body:has(#testimonials-card3:target) nav a[href="#testimonials-card1"] { animation-name: dot1-from-3 }
+body:has(#testimonials-card3:target) nav a[href="#testimonials-card2"] { animation-name: dot2-from-3 }
+body:has(#testimonials-card3:target) nav a[href="#testimonials-card3"] { animation-name: dot3-from-3 }
+body:has(#testimonials-card3:target) nav a[href="#testimonials-card4"] { animation-name: dot4-from-3 }
+body:has(#testimonials-card3:target) nav a[href="#testimonials-card5"] { animation-name: dot5-from-3 }
+ 
+@keyframes dot3-from-3 {
+ 0% { background:var(--accent-hover); }
+ 17.77% { background:var(--accent-hover); }
+ 20% { background:#E3E3E3; }
+ 97.77% { background:#E3E3E3; }
+ 100% { background:var(--accent-hover); }
+}
+@keyframes dot4-from-3 {
+ 0% { background:#E3E3E3; }
+ 20% { background:#E3E3E3; }
+ 20.01% { background:var(--accent-hover); }
+ 37.77% { background:var(--accent-hover); }
+ 40% { background:#E3E3E3; }
+ 100% { background:#E3E3E3; }
+}
+@keyframes dot5-from-3 {
+ 0% { background:#E3E3E3; }
+ 40% { background:#E3E3E3; }
+ 40.01% { background:var(--accent-hover); }
+ 57.77% { background:var(--accent-hover); }
+ 60% { background:#E3E3E3; }
+ 100% { background:#E3E3E3; }
+}
+@keyframes dot1-from-3 {
+ 0% { background:#E3E3E3; }
+ 60% { background:#E3E3E3; }
+ 60.01% { background:var(--accent-hover); }
+ 77.77% { background:var(--accent-hover); }
+ 80% { background:#E3E3E3; }
+ 100% { background:#E3E3E3; }
+}
+@keyframes dot2-from-3 {
+ 0% { background:#E3E3E3; }
+ 80% { background:#E3E3E3; }
+ 80.01% { background:var(--accent-hover); }
+ 97.77% { background:var(--accent-hover); }
+ 100% { background:#E3E3E3; }
+}
+ 
+/* 도트4 클릭 시 */
+body:has(#testimonials-card4:target) nav a[href="#testimonials-card1"] { animation-name: dot1-from-4 }
+body:has(#testimonials-card4:target) nav a[href="#testimonials-card2"] { animation-name: dot2-from-4 }
+body:has(#testimonials-card4:target) nav a[href="#testimonials-card3"] { animation-name: dot3-from-4 }
+body:has(#testimonials-card4:target) nav a[href="#testimonials-card4"] { animation-name: dot4-from-4 }
+body:has(#testimonials-card4:target) nav a[href="#testimonials-card5"] { animation-name: dot5-from-4 }
+ 
+@keyframes dot4-from-4 {
+ 0% { background:var(--accent-hover); }
+ 17.77% { background:var(--accent-hover); }
+ 20% { background:#E3E3E3; }
+ 97.77% { background:#E3E3E3; }
+ 100% { background:var(--accent-hover); }
+}
+@keyframes dot5-from-4 {
+ 0% { background:#E3E3E3; }
+ 20% { background:#E3E3E3; }
+ 20.01% { background:var(--accent-hover); }
+ 37.77% { background:var(--accent-hover); }
+ 40% { background:#E3E3E3; }
+ 100% { background:#E3E3E3; }
+}
+@keyframes dot1-from-4 {
+ 0% { background:#E3E3E3; }
+ 40% { background:#E3E3E3; }
+ 40.01% { background:var(--accent-hover); }
+ 57.77% { background:var(--accent-hover); }
+ 60% { background:#E3E3E3; }
+ 100% { background:#E3E3E3; }
+}
+@keyframes dot2-from-4 {
+ 0% { background:#E3E3E3; }
+ 60% { background:#E3E3E3; }
+ 60.01% { background:var(--accent-hover); }
+ 77.77% { background:var(--accent-hover); }
+ 80% { background:#E3E3E3; }
+ 100% { background:#E3E3E3; }
+}
+@keyframes dot3-from-4 {
+ 0% { background:#E3E3E3; }
+ 80% { background:#E3E3E3; }
+ 80.01% { background:var(--accent-hover); }
+ 97.77% { background:var(--accent-hover); }
+ 100% { background:#E3E3E3; }
+}
+ 
+/* 도트5 클릭 시 */
+body:has(#testimonials-card5:target) nav a[href="#testimonials-card1"] { animation-name: dot1-from-5 }
+body:has(#testimonials-card5:target) nav a[href="#testimonials-card2"] { animation-name: dot2-from-5 }
+body:has(#testimonials-card5:target) nav a[href="#testimonials-card3"] { animation-name: dot3-from-5 }
+body:has(#testimonials-card5:target) nav a[href="#testimonials-card4"] { animation-name: dot4-from-5 }
+body:has(#testimonials-card5:target) nav a[href="#testimonials-card5"] { animation-name: dot5-from-5 }
+ 
+@keyframes dot5-from-5 {
+ 0% { background:var(--accent-hover); }
+ 17.77% { background:var(--accent-hover); }
+ 20% { background:#E3E3E3; }
+ 97.77% { background:#E3E3E3; }
+ 100% { background:var(--accent-hover); }
+}
+@keyframes dot1-from-5 {
+ 0% { background:#E3E3E3; }
+ 20% { background:#E3E3E3; }
+ 20.01% { background:var(--accent-hover); }
+ 37.77% { background:var(--accent-hover); }
+ 40% { background:#E3E3E3; }
+ 100% { background:#E3E3E3; }
+}
+@keyframes dot2-from-5 {
+ 0% { background:#E3E3E3; }
+ 40% { background:#E3E3E3; }
+ 40.01% { background:var(--accent-hover); }
+ 57.77% { background:var(--accent-hover); }
+ 60% { background:#E3E3E3; }
+ 100% { background:#E3E3E3; }
+}
+@keyframes dot3-from-5 {
+ 0% { background:#E3E3E3; }
+ 60% { background:#E3E3E3; }
+ 60.01% { background:var(--accent-hover); }
+ 77.77% { background:var(--accent-hover); }
+ 80% { background:#E3E3E3; }
+ 100% { background:#E3E3E3; }
+}
+@keyframes dot4-from-5 {
+ 0% { background:#E3E3E3; }
+ 80% { background:#E3E3E3; }
+ 80.01% { background:var(--accent-hover); }
+ 97.77% { background:var(--accent-hover); }
+ 100% { background:#E3E3E3; }
+}
+
+.team-member-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 30px;
+    gap: 24px;
+}
+ 
+ 
+/* ═══════════════════════════════
+   testimonials-card
+═══════════════════════════════ */
+.testimonials-card {
+  width: 20%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  padding: 0 20px 10px;
+}
+ 
+.testimonials-card-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #e8edf5;
+  margin-bottom: 22px;
+  background: #dde5f0;
+}
+ 
+.testimonials-card-name {
+  font-size: 20px;
+  font-family: var(--title-font);
+  font-weight: 700;
+  color: #1a3c6e;
+  margin-bottom: 4px;
+}
+ 
+.testimonials-card-role {
+  font-size: 12px;
+  color: #888;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+ 
+/* ═══════════════════════════════
+   별점
+═══════════════════════════════ */
+.stars {
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+ 
+.stars img {
+  width: 16px;
+  height: 16px;
+}
+ 
+/* ═══════════════════════════════
+   인용 블록
+═══════════════════════════════ */
+.quote {
+    font-style: italic;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.8;
+    max-width: 900px;
+    border: none;
+    list-style: none;
+    position: relative;
+   text-align: center;
+}
+ 
+/* 열린따옴표 */
+.testimonials-q-open {
+  display: inline-block;
+  width: 25px;
+  height: auto;
+  vertical-align: top;
+  margin-right: 8px;
+}
+ 
+/* 닫힌따옴표: 180도 회전 */
+.testimonials-q-close {
+  display: inline-block;
+  width: 25px;
+  height: auto;
+  vertical-align: bottom;
+  margin-left: 8px;
+  transform: rotate(180deg);
+}
+ 
+/* ═══════════════════════════════
+   도트 네비게이션
+═══════════════════════════════ */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+}
+ 
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #E3E3E3;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+ 
+.dot:hover {
+  background: var(--accent-hover);
+}
+ 
+ 
+/* 현재 :target 카드에 해당하는 도트 강조 */
+body:has(#testimonials-card1:target) nav a[href="#testimonials-card1"],
+body:has(#testimonials-card2:target) nav a[href="#testimonials-card2"],
+body:has(#testimonials-card3:target) nav a[href="#testimonials-card3"],
+body:has(#testimonials-card4:target) nav a[href="#testimonials-card4"],
+body:has(#testimonials-card5:target) nav a[href="#testimonials-card5"] {
+  background: var(--accent-hover);
+}
+
+/* ===========================
+   태블릿
+=========================== */
+@media (max-width: 768px) {
+    .testimonials {
+        max-width: 100%;
+    padding: 50px 40px 40px;
+  }
+}
+/* ===========================
+   모바일
+=========================== */
+@media (max-width: 480px) {
+    .testimonials {
+    padding: 40px 20px 30px;
+  }
+}

@@ -1,0 +1,220 @@
+/* ===========================
+   team section
+=========================== */
+.team {
+    background-color:var(--bg-white);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+ 
+/* ===========================
+   Team Header
+=========================== */
+.team-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+ 
+.team--header-title {
+    font-size: 32px;
+    font-weight: 700;
+    color:var(--primary-color);
+    margin-bottom: 16px; 
+    font-family: var(--title-font);
+}
+ 
+/* 구분선 */
+.team-header-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+ 
+.team-header-divider-line {
+    display: inline-block;
+    width: 50px;
+    height: 1px;
+    background-color: #b7b7b7;
+}
+ 
+.team-header-divider-accent {
+    display: inline-block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+ 
+.team-header-desc {
+    font-size: 15px;
+    color: var(--text-body);
+    line-height: 20px;
+    max-width: 700px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+ 
+/* ===========================
+   Team Grid
+=========================== */
+.team-member-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 30px;
+    gap: 24px;
+}
+ 
+/* ===========================
+   Team Card
+=========================== */
+.team-member-card {
+    display: flex;
+    gap: 24px;
+    padding: 30px 28px;
+    border-radius: 8px;
+    background-color: var(--bg-white);
+    box-shadow: 0 5px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+ 
+/* hover 시 위로 올라가기 */
+.team-member-card:hover {
+    transform: translateY(-6px);
+  
+}
+ 
+/* ===========================
+    team member photo
+=========================== */
+.team-member-photo {
+    flex: 0 0 160px;
+    flex-shrink: 0; 
+    align-items: center;   
+    justify-content: center;
+}
+ 
+.team-member-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    margin-top: 5px;
+    object-fit: cover;
+    display: block;
+}
+ 
+/* ===========================
+   Member Info
+=========================== */
+.team-member-info {
+    flex: 1;
+    align-items: flex-start;
+    padding-top: 4px;
+}
+ 
+.team-member-info-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-title);
+    margin-bottom: 9px;
+    font-family: var(--title-font);
+}
+ 
+.team-member-info-role {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-body);
+    margin-bottom: 15px;
+}
+ 
+/* role 밑 구분선 */
+.team-member-info-divider {
+    display: block;
+    width: 50px;
+    height: 1px;
+    background-color: #e1e1e1;
+    margin-bottom: 12px;
+}
+ 
+.team-member-info-desc {
+    font-size: 14px;
+    color: var(--text-body);
+    font-weight: 400;
+    line-height: 1.65;
+    margin-bottom: 12px;
+}
+ 
+/* ===========================
+    social links
+=========================== */
+.team-info-social-links {
+    display: flex;
+    gap: 8px;
+}
+ 
+.team-social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #F4F4F4;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+ 
+.x-logo, .facebook-logo, .linkedin-logo, .insta-logo {
+    width: 16px;
+    height: 16px;
+}
+ 
+.team-social-icon:hover {
+    background-color:var(--accent-hover);
+}
+ 
+.team-social-icon:hover img {
+    filter: brightness(0) invert(1);
+}
+ 
+/* ===========================
+   태블릿: 1열, 가로 레이아웃 유지
+=========================== */
+@media (max-width: 900px) {
+    .team-member-grid {
+        grid-template-columns: 1fr;
+    }
+}
+ 
+/* ===========================
+   모바일: 1열 + 중앙 정렬
+=========================== */
+@media (max-width: 600px) {
+    .team {
+        padding: 60px 20px;
+    }
+ 
+    .team-member-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+ 
+    .team-member-photo img {
+        width: 140px;
+        height: 140px;
+    }
+ 
+    .team-member-info {
+        padding-top: 0;
+    }
+ 
+    /* 구분선 중앙 정렬 */
+    .team-member-info-divider {
+        margin: 0 auto 12px;
+    }
+ 
+    /* 소셜 아이콘 중앙 정렬 */
+    .team-info-social-links {
+        justify-content: center;
+    }
+}

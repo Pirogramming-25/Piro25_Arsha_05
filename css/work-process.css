@@ -1,0 +1,191 @@
+/* ===========================
+   work-process section
+=========================== */
+.work-process {
+    background-color: var(--bg-white);
+    text-align: center;
+    margin: 0 auto;
+}
+ 
+/* ===========================
+   work-process Header
+=========================== */
+.pricing-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+ 
+.work-process-header-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 16px; 
+    font-family: var(--title-font);
+}
+ 
+/* 구분선 */
+.work-process-header-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+ 
+.work-process-header-divider-line {
+    display: inline-block;
+    width: 50px;
+    height: 1px;
+    background-color: #b7b7b7;
+}
+ 
+.work-process-header-divider-accent {
+    display: inline-block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+ 
+.work-process-header-desc {
+    font-size: 15px;
+    color: var(--text-body);
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 10px;
+    margin-bottom: 50px;
+}
+ 
+/* ===========================
+   work-process Grid
+=========================== */
+.work-process-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 30px;
+    max-width: 1200px;
+    gap: 24px;
+    align-items: center;
+    margin: 0 auto;
+}
+ 
+/* ===========================
+   pricing plan Card
+=========================== */
+.work-process-card {
+    background-color: var(--bg-white);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.work-process-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1), 0 4px 20px rgba(181, 235, 255, 0.386);
+    transition: transform 0.5s ease;
+}
+
+/* ===========================
+   work-process card contents
+=========================== */
+/* 이미지 영역 */
+.work-process-card-img-wrap {
+    position: relative;
+    overflow: hidden; /* 이미지 zoom 클리핑 유지 */
+    border-radius: 20px 20px 0 0;
+}
+ 
+.work-process-card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+    border-radius: 20px 20px 0 0; /* 카드 상단 모서리 유지 */
+}
+ 
+.work-process-card:hover .work-process-card-img {
+    transform: scale(1.1);
+}
+
+/* 번호 뱃지 */
+.work-process-card-step-number {
+    position: absolute;
+    top: 190px;
+    bottom: -20px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    background: var(--accent-color);
+    color: #fff;
+    font-family: var(--title-font);
+    font-size: 25px;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    }
+
+/* 카드 본문 */
+.work-process-card-info {
+    padding: 10px 35px 35px;
+}
+
+/* 플랜 타이틀 */
+.work-process-card-info-title {
+    font-size: 25px;
+    font-weight:700;
+    color: var(--primary-color);
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-family: var(--title-font);
+}
+
+.work-process-card-info-desc {
+    font-size: 15px;
+    color: var(--text-body);
+    line-height: 1.5;
+    margin: 0 0 1.25rem;
+}
+ 
+
+/* 리스트 */
+.work-process-card-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.work-process-card-info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #444;
+}
+ 
+.work-process-card-info-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+ 
+/* 반응형 */
+@media (max-width: 768px) {
+  .work-process-card-grid {
+    grid-template-columns: 1fr;
+    max-width: 700px;
+  }
+}
+ 
+@media (max-width: 480px) {
+  .work-process-card-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    padding: 0 16px;
+  }
+}
