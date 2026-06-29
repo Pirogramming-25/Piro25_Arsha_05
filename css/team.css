@@ -179,7 +179,8 @@
 /* ===========================
    태블릿: 1열, 가로 레이아웃 유지
 =========================== */
-@media (max-width: 768px) {
+
+@media (max-width: 991px) {
     .team-member-grid {
         grid-template-columns: 1fr;
     }

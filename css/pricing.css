@@ -130,14 +130,12 @@
 
 .pricing-price-symbol {
     font-size: 30px;
-    font-family: var(--title-font);
-    font-weight: 400;
+    font-weight: 500;
     align-self: flex-start;
     color: var(--accent-color);
 }
 
 .pricing-price-amount {
-    font-family: var(--title-font);
     font-size: 50px;
     font-weight: 400;
     color: var(--accent-color);
@@ -224,4 +222,5 @@
         max-width: 550px;
     }
 }
+ 
  

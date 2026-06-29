@@ -408,14 +408,6 @@ body:has(#testimonials-card5:target) nav a[href="#testimonials-card5"] { animati
  97.77% { background:var(--accent-hover); }
  100% { background:#E3E3E3; }
 }
-
-.team-member-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 30px;
-    gap: 24px;
-}
- 
  
 /* ═══════════════════════════════
    testimonials-card
