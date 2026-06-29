@@ -95,7 +95,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     align-items: start;
-    animation: portfolioShow 0.45s ease;
+    animation: portfolioPop 0.8s ease-in-out;
 }
 
 /* 추가: 기본적으로 모든 grid 숨김 */
@@ -103,30 +103,28 @@
     display: none;
 }
 
-/* 추가: All 화면 원본 느낌 배치 */
-.portfolio .portfolio-content .all-grid .portfolio-item:nth-child(1) {
-    grid-row: span 2; 
-} 
 
-.portfolio .all-grid .portfolio-item:nth-child(1) {
-    margin-bottom: -12px;
+.portfolio #portfolio-all:checked ~ .portfolio-content .all-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+    animation: portfolioPop 0.8s ease-in-out;
 }
 
-
-.portfolio .portfolio-content .all-grid .portfolio-item:nth-child(5) {
+.portfolio .all-grid .portfolio-item:nth-child(1),
+.portfolio .all-grid .portfolio-item:nth-child(5),
+.portfolio .all-grid .portfolio-item:nth-child(6) {
     grid-row: span 2;
 }
 
-.portfolio .portfolio-content .all-grid .portfolio-item:nth-child(6) {
-    grid-row: span 2;
-} 
-
-.portfolio .all-grid .portfolio-item:nth-child(7) {
-    margin-top: -12px;
-}
 
 .portfolio .all-grid .portfolio-item:nth-child(9) {
-    margin-top: -12px;
+    transform: translateY(-24px);
+}
+
+.portfolio .all-grid .portfolio-item:nth-child(6) {
+    transform: translateY(-24px);
 }
 
 
@@ -193,18 +191,22 @@
 
 
 /* 추가: grid 전환 애니메이션 */
-@keyframes portfolioShow {
-    from {
+@keyframes portfolioPop {
+    0% {
         opacity: 0;
-        transform: translateY(20px) scale(0.97);
+        transform: scale(0.75);
     }
 
-    to {
+    60% {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: scale(1.04);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
     }
 }
-
 
 
 .portfolio .portfolio-item .portfolio-info {
