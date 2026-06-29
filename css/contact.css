@@ -199,3 +199,98 @@
         flex: 1 1 60%;
     }
 }
+
+
+/* =======================================================
+   Join Our Newsletter 부분 코드
+   ======================================================= */
+
+.contact-join-news {
+    background-color: var(--bg-light);
+    padding: 60px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-join-main h3 {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: var(--title-font);
+    color: var(--text-title);
+
+    margin-bottom: 7px;
+}
+
+.contact-join-main p {
+    font-size: 15px;
+    color: var(--text-body);
+    margin-bottom: 30px;
+}
+
+.contact-join-search {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.06);
+    border-radius: 50px;
+    background: var(--bg-white);
+    overflow: hidden;
+}
+
+.contact-join-search input {
+    /* 버튼이 들어와야 한다 -> 공간 확보 */
+    border: none;
+    padding: 14px 150px 14px 25px;
+    width: 100%;
+
+    background: transparent;
+    font-size: 14px;
+    border-radius: 50px;
+    outline: none;
+    color: #444;
+}
+
+.contact-join-subscribe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    
+    border: none;
+    background: var(--accent-color);
+
+    color: var(--bg-white);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 30px;
+    border-radius: 50px;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.contact-join-subscribe:hover {
+    background: var(--accent-hover);
+}
+
+/* 반응형 모바일 처리 */
+@media (max-width: 576px) {
+    .contact-join-search {
+        background: transparent;
+        box-shadow: none;
+    }
+    
+    .contact-join-search input {
+        padding: 14px 25px;
+        border-radius: 50px;
+        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.06);
+        margin-bottom: 15px;
+    }
+    
+    .contact-join-subscribe {
+        position: static;
+        width: 100%;
+        padding: 14px 0;
+    }
+}
