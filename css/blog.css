@@ -114,7 +114,7 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    padding: 12px 6px 12px 6px;
+    padding: 12px 6px;
     background: var(--accent-color);
     color: var(--bg-white);
     font-size: 13px;
@@ -158,6 +158,7 @@
     align-items: center;
     gap: 8px;
 }
+
 .author-title svg,
 .category-title svg {
     width: 16px;
@@ -201,13 +202,34 @@
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 1279px) {
+
+/* 1399px 이하: subscribe 회색 박스 바깥 여백과 비슷하게 container 폭 조정 */
+@media (max-width: 1399.98px) {
+    .blog .container {
+        max-width: 1140px;
+    }
+}
+
+/* 1199px 이하: 카드 2줄 배치 */
+@media (max-width: 1199.98px) {
+    .blog .container {
+        max-width: 960px;
+    }
+
     .blog-post {
         flex: 0 0 calc((100% - 24px) / 2);
         max-width: calc((100% - 24px) / 2);
     }
 }
 
+/* 991px 이하: subscribe 세로형 회색 박스 바깥 여백과 맞춤 */
+@media (max-width: 991.98px) {
+    .blog .container {
+        max-width: 720px;
+    }
+}
+
+/* 768px 이하: 카드 3줄 배치 */
 @media (max-width: 768px) {
     .blog-title {
         font-size: 28px;
@@ -237,20 +259,36 @@
         margin: 0 24px;
     }
 }
+
+/* 767px 이하: 더 작은 화면에서는 container를 540px로 줄여 바깥 여백 유지 */
+@media (max-width: 767.98px) {
+    .blog .container {
+        max-width: 540px;
+    }
+}
+
+/* 480px 이하: 모바일 미세조정 */
 @media (max-width: 480px) {
+    .blog .container {
+        max-width: 100%;
+    }
+
     .blog-img {
         height: 200px;
     }
+
     .blog-post-title {
         font-size: 18px;
         padding: 20px 20px 12px;
     }
+
     .author-category {
         padding: 0 20px 18px;
         gap: 10px;
         font-size: 14px;
         flex-wrap: wrap;
     }
+
     .read-more {
         margin: 0 20px;
         padding: 16px 0 22px;
