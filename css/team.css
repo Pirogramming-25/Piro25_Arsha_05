@@ -20,7 +20,7 @@
     font-weight: 700;
     color:var(--primary-color);
     margin-bottom: 16px; 
-    font-family: 'Jost', sans-serif;
+    font-family: var(--title-font);
 }
  
 /* 구분선 */
@@ -116,12 +116,12 @@
     font-weight: 700;
     color: var(--text-title);
     margin-bottom: 9px;
-    font-family: 'Jost', sans-serif;
+    font-family: var(--title-font);
 }
  
 .team-member-info-role {
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-body);
     margin-bottom: 15px;
 }
@@ -163,14 +163,9 @@
     transition: background-color 0.3s ease;
 }
  
-.x-logo, .facebook-logo, .linkedin-logo {
+.x-logo, .facebook-logo, .linkedin-logo, .insta-logo {
     width: 16px;
     height: 16px;
-}
-
-.insta-logo {
-    width: 23px;
-    height: 23px;
 }
  
 .team-social-icon:hover {
