@@ -1,7 +1,6 @@
 /* ===== Subscribe ===== */
 .subscribe-box {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     background: #f8f8f8;
@@ -15,7 +14,7 @@
     flex: 0 0 auto;
     width: 54%;
     max-width: 54%;
-    min-width: 0;
+    min-width: 420px;
     padding: 0 12px;
     margin-top: 24px;
     box-sizing: border-box;
@@ -49,6 +48,8 @@
 .newsletter-form {
     display: flex;
     height: 56px;
+    min-width: 380px; 
+    flex-shrink: 0; 
     background: var(--bg-white);
     border: 1px solid var(--accent-color);
     border-radius: 50px;
@@ -85,7 +86,7 @@
     flex: 0 0 auto;
     width: 33.333333%;
     max-width: 33.333333%;
-    min-width: 0;
+    min-width: 220px; 
     padding: 0 12px;
     margin-top: 24px;
     align-self: flex-end;
