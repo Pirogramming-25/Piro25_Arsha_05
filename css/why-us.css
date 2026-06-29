@@ -5,7 +5,7 @@
 .why-us .why-us-content {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
-    align-items: start;
+    align-items: center;
     gap: 40px;
 }
 
@@ -19,9 +19,9 @@
 }
 
 .why-us .why-us-text h3 strong {
-    font-family: 'jost', sans-serif;
-    font-size: 34px;
     display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 34px;
     font-weight: 700;
 }
 
@@ -41,8 +41,9 @@
 
 .why-us .why-us-item {
     background-color: var(--bg-white);
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.06);
     padding: 0;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .why-us .why-us-item summary {
@@ -61,7 +62,6 @@
 
 .why-us .why-us-item summary::-webkit-details-marker {
     display: none;
-    
 }
 
 .why-us .why-us-number {
@@ -71,18 +71,37 @@
 
 .why-us .why-us-question {
     color: var(--primary-color);
-    font-family: 'jost', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.why-us .why-us-item summary:hover .why-us-question,
+.why-us .why-us-item[open] .why-us-question {
+    color: var(--accent-color);
 }
 
 .why-us .why-us-icon {
-    color: var(--accent-color);
-    font-size: 20px;
-    transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
 }
 
+.why-us .why-us-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.why-us .why-us-item summary:hover .why-us-icon,
 .why-us .why-us-item[open] .why-us-icon {
-    transform: rotate(180deg);
+    color: var(--accent-color);
+}
+
+.why-us .why-us-item[open] .why-us-icon svg {
+    transform: rotate(90deg);
 }
 
 .why-us .why-us-item p {
@@ -91,11 +110,12 @@
     line-height: 1.55;
     margin: 0;
     padding: 0 20px 20px 50px;
+    animation: whyUsFade 0.35s ease;
 }
 
 .why-us .why-us-image {
-    padding-top: 40px;
-    overflow: hidden;
+    align-self: center;
+    overflow: visible;
 }
 
 .why-us .why-us-image img {
@@ -104,22 +124,60 @@
     height: auto;
     display: block;
     margin: 0 auto;
-    transform: scale(1);
+    transform: translateY(0) scale(1);
     transform-origin: center center;
-    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.why-us:has(.why-us-item[open]) .why-us-image img {
+    transform: translateY(18px) scale(1.04);
+}
+
+.why-us:has(.why-us-item:nth-child(2)[open]) .why-us-image img {
+    transform: translateY(36px) scale(1.04);
+}
+
+.why-us:has(.why-us-item:nth-child(3)[open]) .why-us-image img {
+    transform: translateY(54px) scale(1.04);
+}
+
+@keyframes whyUsFade {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 991px) {
     .why-us .why-us-content {
         grid-template-columns: 1fr;
+        padding: 0 24px;
     }
 
     .why-us .why-us-image {
         order: -1;
     }
 
-    .why-us .why-us-text h3 {
+    .why-us .why-us-text h3,
+    .why-us .why-us-text h3 strong {
         font-size: 28px;
+    }
+
+    .why-us:has(.why-us-item[open]) .why-us-image img,
+    .why-us:has(.why-us-item:nth-child(2)[open]) .why-us-image img,
+    .why-us:has(.why-us-item:nth-child(3)[open]) .why-us-image img {
+        transform: scale(1.04);
+    }
+}
+
+@media (max-width: 575px) {
+    .why-us .why-us-content {
+        padding: 0 16px;
     }
 }
 
@@ -134,24 +192,10 @@
         padding: 0 16px 16px 16px;
         font-size: 15px;
     }
-}
 
-
-.why-us .why-us-image {
-    overflow: hidden;
-}
-
-.why-us .why-us-image img {
-    width: 100%;
-    max-width: 520px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    transform: scale(1);
-    transform-origin: center center;
-    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.why-us:has(.why-us-item[open]) .why-us-image img {
-    transform: scale(1.04);
+    .why-us:has(.why-us-item[open]) .why-us-image img,
+    .why-us:has(.why-us-item:nth-child(2)[open]) .why-us-image img,
+    .why-us:has(.why-us-item:nth-child(3)[open]) .why-us-image img {
+        transform: none;
+    }
 }
