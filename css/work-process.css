@@ -144,7 +144,7 @@
 }
 
 .work-process-card-info-desc {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-body);
     line-height: 1.5;
     margin: 0 0 1.25rem;
@@ -178,7 +178,7 @@
 
 @media (max-width: 1200px) {
   .work-process-card-grid {
-    max-width: 990px;
+    width: 1025px;
   }
   .work-process-card-img {
     width: 100%;
