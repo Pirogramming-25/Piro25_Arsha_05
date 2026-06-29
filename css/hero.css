@@ -110,3 +110,90 @@
     transform: translateY(0);
   }
 }
+
+
+/* =======================================================
+    Hero 로테이션 부분
+   ======================================================= */
+
+.logo-carousel-section {
+    background: var(--bg-light);
+    padding: 30px 0;
+    width: 100%;
+}
+
+.logo-carousel-container {
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.logo-carousel-track {
+    display: flex;
+    align-items: center;
+    width: 100%;
+ 
+    animation: rotate-logos 17.5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+.logo-item {
+    flex: 0 0 16.6666666667%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-item img {
+    height: 30px;
+    width: auto;
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* =======================================================
+    멈췄다 이동하는 애니메이션 타임라인 공식
+   ======================================================= */
+@keyframes rotate-logos {
+    /* 1번째 로고 세트 정지 (0% ~ 16%) */
+    0%, 16% { transform: translateX(0); }
+    
+    /* 2번째 로고 세트로 슥 이동 후 정지 (20% ~ 36%) */
+    20%, 36% { transform: translateX(-20%); }
+    
+    /* 3번째 로고 세트로 슥 이동 후 정지 (40% ~ 56%) */
+    40%, 56% { transform: translateX(-40%); }
+    
+    /* 4번째 로고 세트로 슥 이동 후 정지 (60% ~ 76%) */
+    60%, 76% { transform: translateX(-60%); }
+    
+    /* 5번째 로고 세트로 슥 이동 후 정지 (80% ~ 96%) */
+    80%, 96% { transform: translateX(-80%); }
+    
+    /* 마지막에 첫 위치(복사본)로 완전히 이동 후 0%로 순간 리셋 (100%) */
+    100% { transform: translateX(-100%); }
+}
+
+@media (max-width: 1200px) {
+    .logo-item {
+        flex: 0 0 20%;
+    }
+    .logo-item img {
+        height: 26.7px;
+    }
+}
+
+@media (max-width: 991px) {
+    .logo-item {
+        flex: 0 0 25%;
+    }
+    .logo-item img {
+        height: 35.25px;
+    }
+}
+@media (max-width: 767px) {
+    .logo-item img {
+        height: 10px;
+    }
+}
