@@ -11,7 +11,7 @@
     font-family: 'Jost', sans-serif;
     font-size: 32px;
     font-weight: 700;
-    margin-bottom: 16px;
+    margin-bottom: -7px;
 } 
 .portfolio .portfolio-title p {
     color: var(--text-body);
@@ -34,7 +34,7 @@
     background-color: var(--accent-color);
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -60%);
 }
 
 .portfolio input {display: none;} 
@@ -52,14 +52,15 @@
 .portfolio .portfolio-filters label {
     display: inline-block;
     padding: 8px 20px 10px 20px;
-    margin: 30px 1px 3px;
+    margin: 22px 1px 3px;
     border-radius: 50px;
     cursor: pointer;
     color: var(--text-body);
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1;
     transition: all 0.3s ease-in-out;
+    font-family: 'Jost', sans-serif;
 }
 .portfolio .portfolio-filters label[for = "portfolio-all"] {}
 .portfolio .portfolio-filters label[for = "portfolio-app"] {}
@@ -208,6 +209,7 @@
     }
 }
 
+/* 아이콘 꾸미기 */
 
 .portfolio .portfolio-item .portfolio-info {
     display: flex;
@@ -242,4 +244,92 @@
     color: var(--accent-hover);
 }
 
+
+/* 반응형 구현 */
+
+/* 태블릿: 2열 */
+@media (max-width: 991px) {
+    .portfolio #portfolio-all:checked ~ .portfolio-content .all-grid,
+    .portfolio #portfolio-app:checked ~ .portfolio-content .app-grid,
+    .portfolio #portfolio-card:checked ~ .portfolio-content .card-grid,
+    .portfolio #portfolio-web:checked ~ .portfolio-content .web-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        grid-auto-flow: dense;
+    }
+
+    .portfolio .all-grid .portfolio-item:nth-child(9) {
+        transform: none;
+    }
+
+    .portfolio .all-grid .portfolio-item {
+        grid-row: auto !important;
+        transform: none !important;
+    }
+
+    .portfolio .portfolio-item img {
+        height: auto;
+    }
+
+    .portfolio .portfolio-content {
+        width: 92%;
+        margin: 0 auto;
+    }
+
+    
+}
+
+/* 모바일: 1열 */
+@media (max-width: 575px) {
+    .portfolio #portfolio-all:checked ~ .portfolio-content .all-grid,
+    .portfolio #portfolio-app:checked ~ .portfolio-content .app-grid,
+    .portfolio #portfolio-card:checked ~ .portfolio-content .card-grid,
+    .portfolio #portfolio-web:checked ~ .portfolio-content .web-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio .all-grid .portfolio-item:nth-child(1),
+    .portfolio .all-grid .portfolio-item:nth-child(5),
+    .portfolio .all-grid .portfolio-item:nth-child(6) {
+        grid-row: auto;
+    }
+
+    .portfolio .all-grid .portfolio-item:nth-child(9) {
+        transform: none;
+    }
+
+        .portfolio .portfolio-filters {
+        white-space: nowrap;
+    }
+
+    .portfolio .portfolio-filters label {
+        padding: 8px 16px 10px 16px;
+        margin: 20px 1px 3px;
+        font-size: 14px;
+    }
+
+        /* 여백 */
+    .portfolio {
+        padding: 40px 0;
+    }
+
+    .portfolio .portfolio-title {
+        margin-bottom: 20px;
+    }
+
+    .portfolio .portfolio-content {
+            width: 88%;
+            margin: 0 auto;
+            padding: 0;
+    }
+
+        .portfolio .all-grid .portfolio-item {
+        grid-row: auto !important;
+        transform: none !important;
+    }
+
+    .portfolio .portfolio-item img {
+        height: auto;
+    }
+}
 
