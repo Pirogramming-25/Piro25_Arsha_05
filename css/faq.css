@@ -118,7 +118,7 @@
 
 .faq-chevron {
     flex-shrink: 0;
-    color: var(--text-muted);
+    color: var(--text-body);
     transition: transform 0.3s, color 0.3s;
 }
 
