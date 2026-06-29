@@ -1,0 +1,38 @@
+.footer {}
+.footer .footer-menu {}
+
+.footer-menu .footer-left {}
+.footer-menu .footer-left h2 {}
+.footer-menu .footer-left p {}
+.footer-left .footer-arsha-contact {}
+.footer-left .footer-arsha-contact p {}
+
+.footer-menu .footer-right {}
+.footer-right .footer-links-group {}
+.footer-right .footer-links-group h3 {}
+.footer-right .footer-links-group .footer-links {}
+
+.footer-links-group .footer-links.link-home {}
+.footer-links-group .footer-links.link-about {}
+.footer-links-group .footer-links.link-services {}
+.footer-links-group .footer-links.link-terms {}
+
+.footer-services-group {}
+.footer-services-group h3 {}
+.footer-links-group .footer-services {}
+.footer-links-group .footer-service.service-design {}
+.footer-links-group .footer-service.service-web {}
+.footer-links-group .footer-service.service-pm {}
+.footer-links-group .footer-service.service-marketing {}
+
+.footer-follow {}
+.footer-follow h3 {}
+.footer-follow p {}
+.footer-follow .follow-contact-group {}
+.follow-contact-group a {}
+.follow-contact-group img {}
+
+.footer-copyright {}
+.footer-copyright p {}
+.footer-copyright .copyright-arsha {}
+.footer-copyright .copyright-designed-by {}
