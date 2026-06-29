@@ -130,17 +130,17 @@
 
 .pricing-price-symbol {
     font-size: 30px;
+    font-weight: 500;
     font-family: var(--title-font);
-    font-weight: 400;
     align-self: flex-start;
     color: var(--accent-color);
 }
 
 .pricing-price-amount {
-    font-family: var(--title-font);
     font-size: 50px;
     font-weight: 400;
     color: var(--accent-color);
+    font-family: var(--title-font);
     line-height: 1;
 }
 
@@ -208,10 +208,21 @@
 /* ===========================
    태블릿: 1열
 =========================== */
+@media (max-width: 991px) {
+    .pricing-plan-grid {
+        grid-template-columns: 1fr;
+        max-width: 750px;
+    }
+}
+
+
 @media (max-width: 768px) {
     .pricing-plan-grid {
         grid-template-columns: 1fr;
-        max-width: 800px;
+        max-width: 600px;
+    }
+    .pricing-header-desc {
+        max-width: 500px;
     }
 }
  
@@ -221,7 +232,9 @@
 @media (max-width: 480px) {
     .pricing-plan-grid {
         grid-template-columns: 1fr;
-        max-width: 550px;
+        max-width: 450px;
+        padding: 0 10px;
     }
 }
+ 
  
