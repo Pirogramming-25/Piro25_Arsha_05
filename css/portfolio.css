@@ -333,3 +333,113 @@
     }
 }
 
+
+/* Portfolio tablet layout fix */
+@media (max-width: 991px) and (min-width: 576px) {
+    .portfolio #portfolio-app:checked ~ .portfolio-content .app-grid,
+    .portfolio #portfolio-card:checked ~ .portfolio-content .card-grid,
+    .portfolio #portfolio-web:checked ~ .portfolio-content .web-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        align-items: start;
+    }
+
+    /* App: left tall image, right two images */
+    .portfolio #portfolio-app:checked ~ .portfolio-content .app-grid {
+        grid-template-areas:
+            "app1 app2"
+            "app1 app3";
+    }
+
+    .portfolio .app-grid .portfolio-item:nth-child(1) {
+        grid-area: app1;
+    }
+
+    .portfolio .app-grid .portfolio-item:nth-child(2) {
+        grid-area: app2;
+    }
+
+    .portfolio .app-grid .portfolio-item:nth-child(3) {
+        grid-area: app3;
+    }
+
+    /* Card: right tall image, left two images */
+    .portfolio #portfolio-card:checked ~ .portfolio-content .card-grid {
+        grid-template-areas:
+            "card1 card2"
+            "card3 card2";
+    }
+
+    .portfolio .card-grid .portfolio-item:nth-child(1) {
+        grid-area: card1;
+    }
+
+    .portfolio .card-grid .portfolio-item:nth-child(2) {
+        grid-area: card2;
+    }
+
+    .portfolio .card-grid .portfolio-item:nth-child(3) {
+        grid-area: card3;
+    }
+
+    /* Web: same as Card */
+    .portfolio #portfolio-web:checked ~ .portfolio-content .web-grid {
+        grid-template-areas:
+            "web1 web2"
+            "web3 web2";
+    }
+
+    .portfolio .web-grid .portfolio-item:nth-child(1) {
+        grid-area: web1;
+    }
+
+    .portfolio .web-grid .portfolio-item:nth-child(2) {
+        grid-area: web2;
+    }
+
+    .portfolio .web-grid .portfolio-item:nth-child(3) {
+        grid-area: web3;
+    }
+
+    .portfolio .app-grid .portfolio-item,
+    .portfolio .card-grid .portfolio-item,
+    .portfolio .web-grid .portfolio-item {
+        overflow: hidden;
+    }
+
+    .portfolio .app-grid .portfolio-item img,
+    .portfolio .card-grid .portfolio-item img,
+    .portfolio .web-grid .portfolio-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+/* Portfolio All tablet layout - masonry style */
+@media (max-width: 991px) and (min-width: 576px) {
+    .portfolio #portfolio-all:checked ~ .portfolio-content .all-grid {
+        display: block;
+        column-count: 2;
+        column-gap: 24px;
+        animation: portfolioPop 0.8s ease-in-out;
+    }
+
+    .portfolio #portfolio-all:checked ~ .portfolio-content .all-grid .portfolio-item {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 24px;
+        break-inside: avoid;
+        transform: none !important;
+        grid-row: auto !important;
+    }
+
+    .portfolio #portfolio-all:checked ~ .portfolio-content .all-grid .portfolio-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+}
