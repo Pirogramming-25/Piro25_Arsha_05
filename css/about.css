@@ -1,11 +1,6 @@
 .about {
     background-color: var(--bg-white);
     box-sizing: border-box;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 .about .about-title {
@@ -56,7 +51,7 @@
     justify-content: center;
     gap: 40px;
     margin-top: 50px;
-    padding: 0 50px;
+    padding: 0;
 }
 
 .about-text-left {
@@ -135,4 +130,42 @@
 .about-read-more-btn:hover svg {
     fill: var(--bg-white);
     transform: translateX(4px);
+}
+
+@media (max-width: 991px) {
+    .about-text-group {
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 991px) {
+    .about-text-group {
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 575px) {
+    .about-text-group {
+        margin-top: 36px;
+        padding: 0 16px;
+    }
+
+    .about .about-title h2 {
+        font-size: 28px;
+    }
+
+    .about-text-left,
+    .about-text-right {
+        gap: 20px;
+    }
+
+    .about-text-check .text-check {
+        align-items: flex-start;
+    }
+
+    .about-text-right .about-read-more-btn {
+        padding: 10px 22px;
+    }
 }
