@@ -1,38 +1,180 @@
-.footer {}
-.footer .footer-menu {}
+.footer {
+    background-color: var(--bg-white);
 
-.footer-menu .footer-left {}
-.footer-menu .footer-left h2 {}
-.footer-menu .footer-left p {}
-.footer-left .footer-arsha-contact {}
-.footer-left .footer-arsha-contact p {}
+    display: flex;
+    flex-direction: column;
+}
 
-.footer-menu .footer-right {}
-.footer-right .footer-links-group {}
-.footer-right .footer-links-group h3 {}
-.footer-right .footer-links-group .footer-links {}
+.footer-menu {
+    background-color: aqua;
 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    width: 100%;
+    padding: 60px 40px;
+    box-sizing: border-box;
+}
+
+.footer-menu .footer-left {
+    background-color: antiquewhite;
+    width: 20%;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer-menu .footer-left h2 {
+    color: var(--text-title);
+    font-family: var(--title-font);
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding-bottom: 1rem;
+}
+
+.footer-menu .footer-left p {
+    font-family: var(--nav-font);
+}
+.footer-left .footer-arsha-contact {
+    margin-top: 5px;
+}
+.footer-left .footer-arsha-contact p {
+    font-family: var(--nav-font);
+}
+
+.footer-right {
+    width: 65%;
+    background-color: blueviolet;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 2.5rem;
+}
+
+.footer-right .footer-links-group {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.footer-right .footer-links-group h4 {
+    margin-top: 0;
+    color: var(--text-title);
+    font-family: var(--title-font);
+    font-weight: 500; 
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+.footer-right .footer-links-group .footer-links-contents {
+    display: flex;
+    flex-direction: column;
+    margin: 7px 0;
+    gap: 5px;
+
+}
+.footer-links-group .footer-links-contents .footer-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+
+    font-family: var(--nav-font);
+}
+.footer-links-contents p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+.footer-links-contents svg {
+    fill: var(--accent-color);
+}
 .footer-links-group .footer-links.link-home {}
 .footer-links-group .footer-links.link-about {}
 .footer-links-group .footer-links.link-services {}
 .footer-links-group .footer-links.link-terms {}
 
-.footer-services-group {}
-.footer-services-group h3 {}
-.footer-links-group .footer-services {}
+.footer-services-group {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.footer-services-group h4 {
+    margin-top: 0;
+    color: var(--text-title);
+    font-family: var(--title-font);
+    font-weight: 500; 
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+.footer-services-group .footer-services-contents {
+    display: flex;
+    flex-direction: column;
+    margin: 7px 0;
+    gap: 5px;
+}
+.footer-services-contents .footer-services {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+
+    font-family: var(--nav-font);
+}
+.footer-services-contents p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.footer-services-contents svg {
+    fill: var(--accent-color);
+}
 .footer-links-group .footer-service.service-design {}
 .footer-links-group .footer-service.service-web {}
 .footer-links-group .footer-service.service-pm {}
 .footer-links-group .footer-service.service-marketing {}
 
-.footer-follow {}
-.footer-follow h3 {}
-.footer-follow p {}
-.footer-follow .follow-contact-group {}
+.footer-follow {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.footer-follow h4 {
+    margin-top: 0;
+    color: var(--text-title);
+    font-family: var(--title-font);
+    font-weight: 500; 
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+.footer-follow-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: var(--text-body);
+}
+.footer-follow-contents p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+.footer-follow-contents .follow-contact-group {}
 .follow-contact-group a {}
-.follow-contact-group img {}
+.follow-contact-group svg {}
 
-.footer-copyright {}
+.footer-copyright {
+    background-color: aquamarine;
+}
 .footer-copyright p {}
 .footer-copyright .copyright-arsha {}
 .footer-copyright .copyright-designed-by {}
