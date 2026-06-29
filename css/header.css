@@ -2,6 +2,8 @@
 header {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
     position: sticky;
     top: 0; 
     z-index: 999;
@@ -25,6 +27,7 @@ header .demo-bar {
 .left-header-element {
     display: flex;
     flex-direction: row;
+    justify-content: space;
     gap: 25px;
 }
 
@@ -148,7 +151,7 @@ header .transparent-header {
     justify-content: space-between;
     align-items: center;
 
-    padding: 0 20px;
+    padding: 0 0 0 20px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -166,7 +169,7 @@ header .transparent-header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 
     gap: 45px;
     padding: 0 60px;
@@ -175,7 +178,8 @@ header .transparent-header {
 .header-menu-group .nav-menu {
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    align-items: center;
+    gap: 20px;
 }
 
 .header-menu-group .nav-menu a {
@@ -192,10 +196,79 @@ header .transparent-header {
     padding: 10px 20px;
     border-radius: 20px;
     background-color: var(--accent-color);
-
     transition: all 0.3s ease;
 }
 
 .header-menu-group .get-started-btn:hover {
     background-color: var(--accent-hover);
 }
+
+.menu-btn-custom {
+    display: none;
+
+    position: relative;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+/* 햄버거 버튼 */
+.menu-btn-custom .line {
+    display: block;
+    height: 2.5px;
+    background-color: #fafbfc;
+}
+
+.menu-btn-custom .line-top {
+    width: 15px;
+}
+
+.menu-btn-custom .line-middle {
+    width: 30px;
+}
+
+.menu-btn-custom .line-bottom {
+    width: 20px;
+}
+
+/* 미디어 쿼리 케이스별 설정 */
+@media (max-width: 1216px) {
+    .header-menu-group {
+        gap: 20px;
+        padding: 0 20px;
+    }
+}
+@media (max-width: 1200px) {
+    .header-menu-group .nav-menu {
+        display: none;
+    }
+
+    .menu-btn-custom {
+        display: flex;
+    }
+    
+}
+
+@media (max-width: 1024px) {
+    .media-button {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .left-header-element a {
+        display: none;
+    }
+    .demo-bar .left-header-element {
+        margin: 0;
+        padding: 0;
+        justify-content: flex-start;
+    }
+}
+

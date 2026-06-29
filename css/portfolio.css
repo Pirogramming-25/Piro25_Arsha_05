@@ -246,6 +246,13 @@
 
 
 /* 반응형 구현 */
+@media (max-width: 1199px) {
+    .portfolio .portfolio-content {
+        width: 100%;
+        padding: 0 24px;
+        box-sizing: border-box;
+    }
+}
 
 /* 태블릿: 2열 */
 @media (max-width: 991px) {
@@ -272,10 +279,11 @@
     }
 
     .portfolio .portfolio-content {
-        width: 92%;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 24px;
         margin: 0 auto;
     }
-
     
 }
 
@@ -298,7 +306,7 @@
         transform: none;
     }
 
-        .portfolio .portfolio-filters {
+    .portfolio .portfolio-filters {
         white-space: nowrap;
     }
 
@@ -318,12 +326,13 @@
     }
 
     .portfolio .portfolio-content {
-            width: 88%;
-            margin: 0 auto;
-            padding: 0;
+        width: 100%;
+        padding: 0 16px;
+        box-sizing: border-box;
+        margin: 0 auto;
     }
 
-        .portfolio .all-grid .portfolio-item {
+    .portfolio .all-grid .portfolio-item {
         grid-row: auto !important;
         transform: none !important;
     }
@@ -441,5 +450,23 @@
         height: auto;
         display: block;
         object-fit: cover;
+    }
+}
+
+@media (max-width: 1199px) {
+    .portfolio .portfolio-content {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 991px) {
+    .portfolio .portfolio-content {
+        padding: 0 32px;
+    }
+}
+
+@media (max-width: 575px) {
+    .portfolio .portfolio-content {
+        padding: 0 16px;
     }
 }
