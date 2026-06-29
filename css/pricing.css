@@ -20,7 +20,7 @@
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: 16px; 
-    font-family: 'Jost', sans-serif;
+    font-family: var(--title-font);
 }
  
 /* 구분선 */
@@ -117,7 +117,7 @@
     color: var(--primary-color);
     margin-top: 30px;
     margin-bottom: 20px;
-    font-family: 'Jost', sans-serif;
+    font-family: var(--title-font);
 }
 
 /* 가격 */
