@@ -91,10 +91,6 @@
 .footer-links-contents svg {
     fill: var(--accent-color);
 }
-.footer-links-group .footer-links.link-home {}
-.footer-links-group .footer-links.link-about {}
-.footer-links-group .footer-links.link-services {}
-.footer-links-group .footer-links.link-terms {}
 
 .footer-services-group {
     display: flex;
@@ -134,10 +130,6 @@
 .footer-services-contents svg {
     fill: var(--accent-color);
 }
-.footer-links-group .footer-service.service-design {}
-.footer-links-group .footer-service.service-web {}
-.footer-links-group .footer-service.service-pm {}
-.footer-links-group .footer-service.service-marketing {}
 
 .footer-follow {
     display: flex;
@@ -202,4 +194,17 @@
     color: var(--accent-color);
 }
 
-/* 애니메이션 열라 귀차늠 나중에.. */
+@media (max-width: 991px) {
+    .footer-follow {
+        display: none;
+    }
+    .footer-menu .footer-right {
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-menu .footer-right {
+        display: none;
+    }
+}
