@@ -117,7 +117,6 @@ header .demo-bar {
 
 .right-header-element .right-header-btn.demo-hide-btn svg {
     fill: var(--text-muted);
-
     transition: all 0.25s ease;
 }
 
@@ -129,7 +128,6 @@ header .demo-bar {
     background-color: var(--accent-hover);
     height: 100%;
     padding: 0 15px;
-
     transition: all 0.3s ease;
 }
 
@@ -151,9 +149,11 @@ header .transparent-header {
     justify-content: space-between;
     align-items: center;
 
-    padding: 0 0 0 20px;
+    padding: 0 30px;
     width: 100%;
     box-sizing: border-box;
+    overflow: visible;
+    gap: 20px;
 }
 
 /* 대 제목 */
@@ -161,7 +161,7 @@ header .transparent-header {
     font-size: 30px;
     font-weight: 500; 
     color: var(--bg-white);
-    padding: 0 45px;
+    padding: 0 15px;
 }
 
 /* 메뉴 부분 */
@@ -171,35 +171,37 @@ header .transparent-header {
     align-items: center;
     justify-content: flex-end;
 
-    gap: 45px;
-    padding: 0 60px;
+    gap: 30px;
+    padding: 0;
 }
 
 .header-menu-group .nav-menu {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
+    margin-right: auto;
 }
 
-.header-menu-group .nav-menu a {
+.header-menu-group .nav-menu > a {
     color: var(--bg-white);
     transition: all 0.3s ease;
 }
 
-.header-menu-group .nav-menu a:hover {
+.header-menu-group .nav-menu > a:hover {
     color: var(--accent-hover);
 }
 
-.header-menu-group .get-started-btn {
+.get-started-btn {
     color: var(--bg-white);
     padding: 10px 20px;
     border-radius: 20px;
     background-color: var(--accent-color);
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
-.header-menu-group .get-started-btn:hover {
+.get-started-btn:hover {
     background-color: var(--accent-hover);
 }
 
@@ -237,6 +239,112 @@ header .transparent-header {
     width: 20px;
 }
 
+/* 드롭다운 */
+.dropdown {
+    position: relative;
+}
+
+.dropdown > a {
+    color: var(--bg-white);
+    transition: all 0.3s ease;
+}
+
+.dropdown > a:hover {
+    color: var(--accent-hover);
+}
+
+.dropdown > a::after {
+    content: " ∨";
+    font-size: 12px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg-white);
+    min-width: 200px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 8px 0;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu > a {
+    display: block !important;
+    padding: 10px 20px;
+    color: #444 !important;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.dropdown-menu > a:hover {
+    color: var(--accent-color) !important;
+}
+
+/* 딥 드롭다운 */
+.deep-dropdown {
+    position: relative;
+}
+
+.deep-dropdown > a {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: #444 !important;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.deep-dropdown > a::after {
+    content: "∨";
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.deep-dropdown > a:hover {
+    color: var(--accent-color) !important;
+}
+
+.deep-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    left: auto;
+    background: var(--bg-white);
+    min-width: 200px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 8px 0;
+    z-index: 1001;
+}
+
+.deep-dropdown:hover .deep-dropdown-menu {
+    display: block;
+}
+
+.deep-dropdown-menu a {
+    display: block !important;
+    padding: 10px 20px;
+    color: #444 !important;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.deep-dropdown-menu a:hover {
+    color: var(--accent-color) !important;
+}
+
 /* 미디어 쿼리 케이스별 설정 */
 @media (max-width: 1216px) {
     .header-menu-group {
@@ -244,6 +352,7 @@ header .transparent-header {
         padding: 0 20px;
     }
 }
+
 @media (max-width: 1200px) {
     .header-menu-group .nav-menu {
         display: none;
@@ -252,7 +361,6 @@ header .transparent-header {
     .menu-btn-custom {
         display: flex;
     }
-    
 }
 
 @media (max-width: 1024px) {
@@ -271,4 +379,3 @@ header .transparent-header {
         justify-content: flex-start;
     }
 }
-

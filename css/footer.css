@@ -11,7 +11,7 @@
     align-items: flex-start;
     
     width: 100%;
-    padding: 40px 40px;
+    padding: 40px 40px 40px 80px;
     box-sizing: border-box;
 }
 
@@ -34,13 +34,14 @@
 .footer-menu .footer-left p {
     font-size: 0.9rem;
     font-family: var(--nav-font);
-    color: var(--text-muted);
+    
 }
 .footer-left .footer-arsha-contact {
     margin-top: 2px;
 }
 .footer-left .footer-arsha-contact p {
     font-family: var(--nav-font);
+    font-color:(#444444);
 }
 
 .footer-right {
@@ -172,7 +173,6 @@
 .footer-follow-contents p {
     font-size: 0.9rem;
     font-family: var(--nav-font);
-    color: var(--text-muted);
 }
 .follow-contact-group {
     display: flex;
