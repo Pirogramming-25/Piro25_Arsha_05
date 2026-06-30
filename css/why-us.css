@@ -1,0 +1,391 @@
+/* 4. Why us */
+
+.why-us {
+    background-color: var(--bg-light);
+}
+
+.why-us .why-us-content {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.why-us .why-us-text h3 {
+    color: var(--primary-color);
+    font-family: 'Jost', sans-serif;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 12px;
+}
+
+.why-us .why-us-text h3 strong {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.why-us .why-us-desc {
+    color: color-mix(in srgb, var(--text-body), transparent 30%);
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0 0 20px;
+    max-width: 640px;
+}
+
+.why-us .why-us-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.why-us .why-us-item {
+    background-color: var(--bg-white);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.06);
+    padding: 0;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.why-us .why-us-item summary {
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 18px 20px;
+    color: var(--primary-color);
+    font-family: 'Jost', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.why-us .why-us-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.why-us .why-us-number {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.why-us .why-us-question {
+    color: var(--primary-color);
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.why-us .why-us-item summary:hover .why-us-question,
+.why-us .why-us-item[open] .why-us-question {
+    color: var(--accent-color);
+}
+
+.why-us .why-us-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+}
+
+.why-us .why-us-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.why-us .why-us-item summary:hover .why-us-icon,
+.why-us .why-us-item[open] .why-us-icon {
+    color: var(--accent-color);
+}
+
+.why-us .why-us-item[open] .why-us-icon svg {
+    transform: rotate(90deg);
+}
+
+.why-us .why-us-item p {
+    color: var(--text-body);
+    font-size: 16px;
+    line-height: 1.55;
+    margin: 0;
+    padding: 0 20px 20px 50px;
+    animation: whyUsFade 0.35s ease;
+}
+
+.why-us .why-us-image {
+    align-self: center;
+    overflow: visible;
+}
+
+.why-us .why-us-image img {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transform: translateY(0) scale(1);
+    transform-origin: center center;
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.why-us:has(.why-us-item[open]) .why-us-image img {
+    transform: translateY(18px) scale(1.04);
+}
+
+.why-us:has(.why-us-item:nth-child(2)[open]) .why-us-image img {
+    transform: translateY(36px) scale(1.04);
+}
+
+.why-us:has(.why-us-item:nth-child(3)[open]) .why-us-image img {
+    transform: translateY(54px) scale(1.04);
+}
+
+@keyframes whyUsFade {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 991px) {
+    .why-us .why-us-content {
+        grid-template-columns: 1fr;
+        padding: 0 24px;
+    }
+
+    .why-us .why-us-image {
+        order: -1;
+    }
+
+    .why-us .why-us-text h3,
+    .why-us .why-us-text h3 strong {
+        font-size: 28px;
+    }
+
+    .why-us:has(.why-us-item[open]) .why-us-image img,
+    .why-us:has(.why-us-item:nth-child(2)[open]) .why-us-image img,
+    .why-us:has(.why-us-item:nth-child(3)[open]) .why-us-image img {
+        transform: scale(1.04);
+    }
+}
+
+@media (max-width: 575px) {
+    .why-us .why-us-content {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 575px) {
+    .why-us .why-us-item summary {
+        grid-template-columns: auto 1fr auto;
+        padding: 16px;
+        font-size: 15px;
+    }
+
+    .why-us .why-us-item p {
+        padding: 0 16px 16px 16px;
+        font-size: 15px;
+    }
+
+    .why-us:has(.why-us-item[open]) .why-us-image img,
+    .why-us:has(.why-us-item:nth-child(2)[open]) .why-us-image img,
+    .why-us:has(.why-us-item:nth-child(3)[open]) .why-us-image img {
+        transform: none;
+    }
+}
+
+
+
+/* 4-2. Skills */
+.skills {
+    background-color: var(--bg-white);
+}
+
+.skills .skills-content {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.skills .skills-image img {
+    width: 100%;
+    max-width: 680px;
+    height: auto;
+    display: block;
+}
+
+.skills .skills-text h3 {
+    color: var(--primary-color);
+    font-family: 'Jost', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 14px;
+}
+
+.skills .skills-text p {
+    color: color-mix(in srgb, var(--text-body), transparent 25%);
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0 0 24px;
+}
+
+.skills .skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.skills .skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.skills .skill-info span {
+    color: var(--text-heading);
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Jost', sans-serif;
+}
+
+.skills .skill-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e8edf5;
+    overflow: hidden;
+}
+
+.skills .skill-progress {
+    height: 100%;
+    background-color: var(--primary-color);
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: skillFill 1.2s ease forwards;
+}
+
+.skills .skill-progress.html {
+    width: 100%;
+    animation-delay: 0.1s;
+}
+
+.skills .skill-progress.css {
+    width: 90%;
+    animation-delay: 0.2s;
+}
+
+.skills .skill-progress.javascript {
+    width: 75%;
+    animation-delay: 0.3s;
+}
+
+.skills .skill-progress.photoshop {
+    width: 55%;
+    animation-delay: 0.4s;
+}
+
+@keyframes skillFill {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* 중간 화면: 481px ~ 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    .skills .container {
+        width: auto;
+        margin: 0 24px;
+    }
+
+    .skills .skills-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0;
+    }
+
+    .skills .skills-image img {
+        width: 100%;
+        max-width: 460px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        transform: none;
+    }
+
+    .skills .skills-text {
+        padding: 0;
+    }
+
+    .skills .skills-text h3 {
+        font-size: 28px;
+    }
+}
+
+/* 작은 화면: 480px 이하 */
+@media (max-width: 480px) {
+    .skills .container {
+        width: auto;
+        margin: 0 14px;
+    }
+
+    .skills .skills-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0;
+    }
+
+    .skills .skills-image img {
+        width: 100%;
+        max-width: none;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        transform: none;
+    }
+
+    .skills .skills-text {
+        padding: 0;
+    }
+
+    .skills .skills-text h3 {
+        font-size: 28px;
+    }
+}
+
+/* 769px ~ 1199px: PC 배치로 돌아갈 때 오른쪽 여백 보정 */
+@media (min-width: 769px) and (max-width: 1199px) {
+    .skills .container {
+        width: auto;
+        margin: 0 40px;
+    }
+
+    .skills .skills-content {
+        gap: 40px;
+    }
+}
+
+/* 769px ~ 1199px: 큰 화면에서 중간 화면으로 줄어들 때 좌우 여백 보정 */
+@media (min-width: 769px) and (max-width: 1199px) {
+    .why-us .container {
+        width: auto;
+        margin: 0 10px;
+    }
+
+    .why-us .why-us-content {
+        gap: 50px;
+    }
+}

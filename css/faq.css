@@ -1,0 +1,276 @@
+/* ===== FAQ Header ===== */
+.faq-header {
+    text-align: center;
+    padding: 0 0 60px;
+    margin: 0;
+}
+
+.faq-title {
+    position: relative;
+    margin: 0 0 20px;
+    padding: 0 0 20px;
+    font-family: var(--title-font);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38.4px;
+    color: var(--text-title);
+}
+
+.faq-title::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 160px;
+    height: 1px;
+    background: var(--text-muted);
+    left: 0;
+    right: 0;
+    bottom: 1px;
+    margin: auto;
+}
+
+.faq-title::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.faq-header p {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 12px;
+    color: var(--text-body);
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    box-sizing: border-box;
+}
+
+/* ===== FAQ List ===== */
+.faq-list {
+    width: 100%;
+    max-width: 1080px;
+    margin: 15px auto 0;
+    padding: 0 12px;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+/* ===== Checkbox Hidden ===== */
+.faq-toggle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ===== Question Area ===== */
+.faq-question {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    background: var(--bg-white);
+    color: var(--text-title);
+    line-height: 24px;
+    transition: color 0.3s;
+}
+
+.faq-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: default;
+}
+
+.faq-click-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-question-text {
+    flex: 1;
+    font-family: var(--title-font, "Poppins", sans-serif);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.faq-chevron {
+    flex-shrink: 0;
+    color: var(--text-body);
+    transition: transform 0.3s, color 0.3s;
+}
+
+/* ===== Answer Area ===== */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    background: var(--bg-white);
+    transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+    margin: 0 0 20px;
+    color: var(--text-body);
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25.6px;
+}
+
+/* ===== Open State ===== */
+.faq-toggle:checked ~ .faq-question .faq-click-area {
+    color: var(--accent-color);
+}
+
+.faq-toggle:checked ~ .faq-question .faq-chevron {
+    color: var(--accent-color);
+    transform: rotate(90deg);
+}
+
+.faq-toggle:checked ~ .faq-answer {
+    max-height: 500px;
+}
+
+/* ===== Hover ===== */
+.faq-click-area:hover {
+    color: var(--accent-hover);
+}
+
+.faq-click-area:hover .faq-chevron {
+    color: var(--accent-hover);
+}
+
+/* ===== Responsive ===== */
+
+/* 1399px 이하: 본문은 subscribe 기준, FAQ 박스는 더 짧게 */
+@media (max-width: 1399.98px) {
+    .faq-header p {
+        max-width: 1140px;
+    }
+
+    .faq-list {
+        max-width: 960px;
+    }
+}
+
+/* 1199px 이하: 본문은 subscribe/blog 기준 960px, FAQ 박스는 더 짧게 */
+@media (max-width: 1199.98px) {
+    .faq-header p {
+        max-width: 960px;
+    }
+
+    .faq-list {
+        max-width: 840px;
+    }
+}
+
+/* 991px 이하: 본문은 subscribe 세로형 기준 720px, FAQ 박스는 더 짧게 */
+@media (max-width: 991.98px) {
+    .faq-header p {
+        max-width: 720px;
+    }
+
+    .faq-list {
+        max-width: 640px;
+    }
+}
+
+/* 768px 이하 */
+@media (max-width: 768px) {
+    .faq-header {
+        padding-bottom: 40px;
+    }
+
+    .faq-title {
+        font-size: 28px;
+        line-height: 33.6px;
+    }
+
+    .faq-question {
+        padding: 18px;
+        align-items: flex-start;
+    }
+
+    .faq-click-area {
+        gap: 8px;
+    }
+
+    .faq-answer {
+        padding: 0 18px;
+    }
+}
+
+/* 767px 이하: 본문은 540px 기준, FAQ 박스는 조금 더 짧게 */
+@media (max-width: 767.98px) {
+    .faq-header p {
+        max-width: 540px;
+    }
+
+    .faq-list {
+        max-width: 500px;
+    }
+}
+
+/* 480px 이하: 최소 좌우 여백만 유지 */
+@media (max-width: 480px) {
+    .faq-header p,
+    .faq-list {
+        max-width: 100%;
+    }
+
+    .faq-title {
+        font-size: 24px;
+    }
+
+    .faq-title::before {
+        width: 120px;
+    }
+
+    .faq-question {
+        padding: 14px;
+        gap: 8px;
+    }
+
+    .faq-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+
+    .faq-question-text {
+        font-size: 15px;
+    }
+
+    .faq-answer {
+        padding: 0 14px;
+    }
+
+    .faq-answer p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}

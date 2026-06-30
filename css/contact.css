@@ -1,0 +1,307 @@
+.contact-main {
+    background-color: var(--bg-white);
+    display: flex;
+    flex-direction: column;
+    /* margin: 0 8rem; */
+    gap: 40px;
+}
+
+.contact-main .contact-title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.contact-main .contact-title-group h2 {
+    font-family: var(--title-font);
+    font-size :32px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 28px;
+    padding-bottom: 3px;
+
+    position: relative;
+}
+.contact-main .contact-title-group p {
+    font-family: var(--nav-font);
+    font-size: 16px;
+    color: var(--nav-font);
+    text-align: center;
+    margin: 20px 0;
+}
+
+.contact-main .contact-title-group h2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 160px;
+    height: 1px;
+    background-color: #ddd;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contact-main .contact-title-group h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #47b2e4;
+    bottom: -21px; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+.contact-main .contact-form-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    width: 100%;
+    max-width: 100%;
+    padding: 0 8rem;
+}
+
+.contact-form-group .contact-left-info {
+    flex: 5 1 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 50px;
+    padding: 30px;
+    box-shadow: 0 0 20px 0 #dfedf2;
+    border-top: 3px solid var(--accent-color);
+    border-bottom: 3px solid var(--accent-color);
+}
+.contact-left-info .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    gap: 30px;
+}
+
+.contact-info .contact-info-detail {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    gap: 20px;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.contact-info-detail h4 {
+    font-family: var(--title-font);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+.contact-info-detail p {
+    font-family: var(--nav-font);
+    font-size: 0.8rem;
+}
+.contact-info-detail svg {
+    width: 40px;
+    height: 40px;
+    fill: var(--accent-color);
+    padding: 8px;
+    border-radius: 50%;
+    background-color: var(--bg-light);
+}
+
+.contact-info-detail:hover svg {
+    fill: var(--bg-white);
+    background-color: var(--accent-hover);
+}
+
+
+.contact-form-group .contact-right-input {
+    flex: 7 1 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    box-shadow: 0 0 20px 0 #dfedf2;
+    border-top: 3px solid var(--accent-color);
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.contact-right-input .input-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.input-form .input-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.input-form .form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.input-row .form-group:nth-child(1) {
+    flex: 1;
+}
+.input-row .form-group:nth-child(2) {
+    flex: 1;
+}
+
+.form-group input {
+    border: 0.1px solid var(--text-muted);
+    padding: 5px;
+}
+.form-group textarea {
+    border: 0.1px solid var(--text-muted);
+    padding: 5px;
+}
+.text-center {
+    display: flex;
+    justify-content: center;
+}
+.text-center button {
+    padding: 8px 20px;
+    background-color: var(--accent-hover);
+    color: var(--bg-white);
+    font-size: 0.9rem;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.text-center button:hover {
+    background-color: var(--accent-color);
+}
+
+/* 반응형 구현 */
+@media (max-width: 1200px) {
+    .contact-main .contact-form-group {
+        max-width: 960px;  
+        margin: 0 auto;
+        padding: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .contact-main .contact-form-group {
+        flex-direction: column;
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    .contact-left-info,
+    .contact-right-input {
+        flex: 1 1 60%;
+    }
+}
+
+
+/* =======================================================
+   Join Our Newsletter 부분 코드
+   ======================================================= */
+
+.contact-join-news {
+    background-color: var(--bg-light);
+    padding: 60px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-join-main h3 {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: var(--title-font);
+    color: var(--text-title);
+
+    margin-bottom: 7px;
+}
+
+.contact-join-main p {
+    font-size: 15px;
+    color: var(--text-body);
+    margin-bottom: 30px;
+}
+
+.contact-join-search {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.06);
+    border-radius: 50px;
+    background: var(--bg-white);
+    overflow: hidden;
+}
+
+.contact-join-search input {
+    /* 버튼이 들어와야 한다 -> 공간 확보 */
+    border: none;
+    padding: 14px 150px 14px 25px;
+    width: 100%;
+
+    background: transparent;
+    font-size: 14px;
+    border-radius: 50px;
+    outline: none;
+    color: #444;
+}
+
+.contact-join-subscribe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    
+    border: none;
+    background: var(--accent-color);
+
+    color: var(--bg-white);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 30px;
+    border-radius: 50px;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.contact-join-subscribe:hover {
+    background: var(--accent-hover);
+}
+
+#map {
+    width: 100%;
+    height: 290px;
+    margin-top: 20px;
+    background: #f4f4f4;
+}
+
+/* 반응형 모바일 처리 */
+@media (max-width: 576px) {
+    .contact-join-search {
+        background: transparent;
+        box-shadow: none;
+    }
+    
+    .contact-join-search input {
+        padding: 14px 25px;
+        border-radius: 50px;
+        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.06);
+        margin-bottom: 15px;
+    }
+    
+    .contact-join-subscribe {
+        position: static;
+        width: 100%;
+        padding: 14px 0;
+    }
+}

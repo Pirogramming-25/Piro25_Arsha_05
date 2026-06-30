@@ -1,0 +1,381 @@
+/* 헤더 기본 설정 */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: sticky;
+    top: 0; 
+    z-index: 999;
+}
+
+/* 데모바 설정 및 구현 */
+header .demo-bar {
+    height: 2rem;
+    background: #22488a;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 0 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 데모바 - 왼쪽 부분 */
+.left-header-element {
+    display: flex;
+    flex-direction: row;
+    justify-content: space;
+    gap: 25px;
+}
+
+.left-header-element img {
+    width: 175px;
+    height: 25px;
+}
+
+.media-button {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.media-button .media-btn svg {
+    fill: var(--text-muted);
+    width: 20px;
+    height: 20px;
+    transition: all 0.25s ease;
+}
+
+.media-button .media-btn svg:hover {
+    fill: var(--bg-white);
+}
+
+.media-button .media-btn.monitor-btn svg {
+    fill: var(--bg-white);
+    width: 20px;
+    height: 20px;
+}
+
+/* 데모바 - 중간 부분 */
+.middle-header-element {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.middle-header-element a {
+    transition: all 0.25s ease;
+}
+
+.middle-header-element a:nth-child(1) {
+    color: var(--text-muted);
+    font-weight: bold;
+}
+
+.middle-header-element a:nth-child(2) {
+    color: var(--bg-white);
+    font-weight: bold;
+}
+
+.middle-header-element a:nth-child(3) {
+    color: var(--text-muted);
+    font-weight: bold;
+}
+
+.middle-header-element a:hover {
+    color: var(--bg-white);
+}
+
+/* 데모바 - 오른쪽 부분 */
+.right-header-element {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.right-header-element .right-header-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+}
+
+.right-header-element .right-header-btn svg {
+    fill: var(--bg-white);
+    width: 20px;
+    height: 20px;
+}
+
+.right-header-element .right-header-btn.demo-hide-btn svg {
+    fill: var(--text-muted);
+    transition: all 0.25s ease;
+}
+
+.right-header-element .right-header-btn.demo-hide-btn svg:hover {
+    fill: var(--bg-white);
+}
+
+.right-header-element .right-header-btn.download-btn {
+    background-color: var(--accent-hover);
+    height: 100%;
+    padding: 0 15px;
+    transition: all 0.3s ease;
+}
+
+.right-header-element .right-header-btn.download-btn:hover {
+    background-color: var(--accent-color);
+}
+
+.right-header-element .right-header-btn span {
+    color: var(--bg-white);
+}
+
+/* 투명 헤더 설정 및 구현 */
+header .transparent-header {
+    height: 5rem;
+    background-color: color-mix(in srgb, var(--primary-color) 90%, transparent);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 30px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: visible;
+    gap: 20px;
+}
+
+/* 대 제목 */
+.transparent-header #header-arsha a {
+    font-size: 30px;
+    font-weight: 500; 
+    color: var(--bg-white);
+    padding: 0 15px;
+}
+
+/* 메뉴 부분 */
+.header-menu-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 30px;
+    padding: 0;
+}
+
+.header-menu-group .nav-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    margin-right: auto;
+}
+
+.header-menu-group .nav-menu > a {
+    color: var(--bg-white);
+    transition: all 0.3s ease;
+}
+
+.header-menu-group .nav-menu > a:hover {
+    color: var(--accent-hover);
+}
+
+.get-started-btn {
+    color: var(--bg-white);
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: var(--accent-color);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.get-started-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.menu-btn-custom {
+    display: none;
+
+    position: relative;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+/* 햄버거 버튼 */
+.menu-btn-custom .line {
+    display: block;
+    height: 2.5px;
+    background-color: #fafbfc;
+}
+
+.menu-btn-custom .line-top {
+    width: 15px;
+}
+
+.menu-btn-custom .line-middle {
+    width: 30px;
+}
+
+.menu-btn-custom .line-bottom {
+    width: 20px;
+}
+
+/* 드롭다운 */
+.dropdown {
+    position: relative;
+}
+
+.dropdown > a {
+    color: var(--bg-white);
+    transition: all 0.3s ease;
+}
+
+.dropdown > a:hover {
+    color: var(--accent-hover);
+}
+
+.dropdown > a::after {
+    content: " ∨";
+    font-size: 12px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg-white);
+    min-width: 200px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 8px 0;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu > a {
+    display: block !important;
+    padding: 10px 20px;
+    color: #444 !important;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.dropdown-menu > a:hover {
+    color: var(--accent-color) !important;
+}
+
+/* 딥 드롭다운 */
+.deep-dropdown {
+    position: relative;
+}
+
+.deep-dropdown > a {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: #444 !important;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.deep-dropdown > a::after {
+    content: "∨";
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.deep-dropdown > a:hover {
+    color: var(--accent-color) !important;
+}
+
+.deep-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    left: auto;
+    background: var(--bg-white);
+    min-width: 200px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 8px 0;
+    z-index: 1001;
+}
+
+.deep-dropdown:hover .deep-dropdown-menu {
+    display: block;
+}
+
+.deep-dropdown-menu a {
+    display: block !important;
+    padding: 10px 20px;
+    color: #444 !important;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.deep-dropdown-menu a:hover {
+    color: var(--accent-color) !important;
+}
+
+/* 미디어 쿼리 케이스별 설정 */
+@media (max-width: 1216px) {
+    .header-menu-group {
+        gap: 20px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .header-menu-group .nav-menu {
+        display: none;
+    }
+
+    .menu-btn-custom {
+        display: flex;
+    }
+}
+
+@media (max-width: 1024px) {
+    .media-button {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .left-header-element a {
+        display: none;
+    }
+    .demo-bar .left-header-element {
+        margin: 0;
+        padding: 0;
+        justify-content: flex-start;
+    }
+}
