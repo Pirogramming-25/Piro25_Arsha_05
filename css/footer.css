@@ -83,7 +83,24 @@
     gap: 2px;
 
     font-family: var(--nav-font);
+    transition: all 0.3s ease;
 }
+.footer-links p:hover {
+    color: var(--accent-hover);
+}
+
+.footer-links p {
+    transition: all 0.5s ease;
+}
+
+.footer-services p:hover {
+    color: var(--accent-hover);
+}
+
+.footer-services p {
+    transition: all 0.5s ease;
+}
+
 .footer-links-contents p {
     font-size: 0.9rem;
     color: var(--text-muted);
@@ -195,16 +212,45 @@
 }
 
 @media (max-width: 991px) {
-    .footer-follow {
-        display: none;
+    .footer-right {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px
     }
-    .footer-menu .footer-right {
-        justify-content: flex-end;
+    .footer-links-group,
+    .footer-services-group {
+        flex: 1 1 calc(50% - 20px);
+    }
+    .footer-follow {
+        flex: 1 1 100%;
+        justify-content: flex-start;
+        margin: 15px 0 0 0;
+
     }
 }
 
 @media (max-width: 767px) {
-    .footer-menu .footer-right {
-        display: none;
+    .footer-menu {
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px 20px;
+    }
+    .footer-left {
+        width: 100%;
+    }
+    .footer-right {
+        width: 100%;
+        flex-direction: column;
+        gap: 40px;
+    }
+    .footer-links-group,
+    .footer-services-group,
+    .footer-follow {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+    .footer-follow {
+        margin-top: 0; /* 불필요한 마진 리셋 */
     }
 }
